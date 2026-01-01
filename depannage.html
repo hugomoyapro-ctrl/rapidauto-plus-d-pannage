@@ -24,17 +24,16 @@
     a{text-decoration:none;color:inherit}
     .container{max-width:1100px;margin:auto;padding:0 16px}
 
-    /* HEADER (centrage garanti comme l’autre page) */
+    /* HEADER (même style que index) */
     header{
-      background:#0f172a;
+      background:#111827;
       color:white;
-      padding:12px 0;
+      padding:10px 0;
       position:sticky;
       top:0;
       z-index:100;
     }
 
-    /* ✅ GRID = centre réel, même si gauche/droite ont des largeurs différentes */
     .nav{
       display:grid;
       grid-template-columns: 1fr auto 1fr;
@@ -46,64 +45,82 @@
     .logo-area{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:6px;
       justify-self:start;
       min-width:0;
     }
+
     .logo-icon{
-      height:42px;
-      width:auto;
-      object-fit:contain;
-      display:block;
+      width:30px;
+      height:30px;
+      border-radius:6px;
+      object-fit:cover;
     }
-    .logo-text{
-      font-weight:800;
-      letter-spacing:.06em;
-      font-size:.95rem;
+
+    .logo{
+      font-weight:700;
+      font-size:1rem;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      max-width:320px;
+      max-width:280px;
     }
 
-    /* menu vraiment centré */
     .nav-center{
+      justify-self:center;
       display:flex;
       gap:10px;
-      justify-self:center;
       align-items:center;
-    }
-    .nav-link{
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.35);
-      font-size:.8rem;
-      font-weight:600;
-      transition:.2s;
+      min-width:0;
       white-space:nowrap;
     }
-    .nav-link:hover{background:rgba(255,255,255,.12)}
-    .nav-link.active{background:rgba(255,255,255,.18);border-color:white}
+
+    .nav-link{
+      border-radius:999px;
+      padding:8px 12px;
+      border:1px solid #ffffff55;
+      color:#f9fafb;
+      background:transparent;
+      font-size:0.8rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.2s;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .nav-link:hover{background:#ffffff11;border-color:#ffffffaa}
+    .nav-link.active{background:#ffffff18;border-color:#ffffffcc}
 
     .nav-right{
       justify-self:end;
       display:flex;
       align-items:center;
+      gap:8px;
+      white-space:nowrap;
     }
-    .btn-call{
+
+    .btn-primary,
+    .btn-phone{
       background:#ef4444;
       color:white;
-      padding:9px 16px;
+      padding:8px 12px;
       border-radius:999px;
-      font-weight:800;
-      font-size:.8rem;
-      white-space:nowrap;
+      font-size:0.8rem;
+      font-weight:600;
+      transition:0.2s;
+      border:none;
+      cursor:pointer;
       display:inline-flex;
       align-items:center;
       gap:6px;
-      transition:.2s;
+      white-space:nowrap;
     }
-    .btn-call:hover{background:#dc2626;transform:translateY(-1px)}
+    .btn-primary:hover,
+    .btn-phone:hover{background:#dc2626;transform:translateY(-1px)}
 
     /* HERO */
     .hero{
@@ -127,28 +144,20 @@
       font-weight:900;
       font-size:.75rem;
       margin-bottom:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
     }
     .pill span{
       width:8px;height:8px;border-radius:50%;
       background:#facc15;
+      box-shadow:0 0 0 5px rgba(250,204,21,.18);
     }
     h1{
       font-size:clamp(2rem,3.2vw,2.6rem);
       margin-bottom:14px;
       line-height:1.2;
     }
-    .hero p{
-      opacity:.95;
-      margin-bottom:10px;
-      font-size:.95rem;
-    }
-    .hero-actions{
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
+    .hero p{opacity:.95;margin-bottom:10px;font-size:.95rem}
+    .hero-actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
 
     .hero-box{
       background:rgba(15,23,42,.9);
@@ -156,22 +165,15 @@
       border-radius:18px;
       padding:20px;
       font-size:.9rem;
+      box-shadow:0 12px 24px rgba(0,0,0,.25);
     }
 
     /* SECTIONS */
     section{padding:70px 0}
     section:nth-of-type(even){background:white}
 
-    .section-title{
-      text-align:center;
-      font-size:1.6rem;
-      margin-bottom:6px;
-    }
-    .section-subtitle{
-      text-align:center;
-      color:#6b7280;
-      margin-bottom:30px;
-    }
+    .section-title{text-align:center;font-size:1.6rem;margin-bottom:6px}
+    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:30px}
 
     .cards{
       display:grid;
@@ -191,32 +193,58 @@
 
     /* CTA */
     .cta{
-      background:#0f172a;
+      background:#111827;
       color:white;
       padding:40px;
       border-radius:22px;
       text-align:center;
+      box-shadow:0 12px 24px rgba(0,0,0,.12);
     }
 
     footer{
-      background:#0f172a;
+      background:#111827;
       color:#9ca3af;
       text-align:center;
       padding:20px;
       font-size:.85rem;
     }
 
+    /* ANIMATIONS (comme index) */
+    .fade-in, .fade-in-right { opacity:0; transition:0.6s ease; }
+    .fade-in { transform: translateY(18px); }
+    .fade-in-right { transform: translateX(24px); }
+    .visible { opacity:1; transform: translate(0,0); }
+
+    /* ✅ MOBILE : header sur 1 seule ligne */
+    @media (max-width: 768px){
+      .nav{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:8px;
+        flex-wrap:nowrap;
+      }
+      .nav-center{
+        flex:1 1 auto;
+        justify-content:center;
+        gap:8px;
+        min-width:0;
+      }
+      .nav-right{gap:6px}
+      .nav-link{padding:6px 10px;font-size:.72rem}
+      .btn-primary,.btn-phone{padding:6px 10px;font-size:.72rem}
+      .logo{font-size:.85rem;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+      .logo-icon{width:26px;height:26px}
+    }
+
+    @media (max-width: 420px){
+      .logo{display:none;}
+      .nav-link{padding:6px 9px;font-size:.70rem}
+      .btn-primary,.btn-phone{padding:6px 9px;font-size:.70rem}
+    }
+
     @media(max-width:768px){
       .hero-grid{grid-template-columns:1fr}
-      .nav{grid-template-columns: 1fr 1fr; grid-template-areas:
-        "left right"
-        "center center";
-        row-gap:10px;
-      }
-      .logo-area{grid-area:left}
-      .nav-right{grid-area:right; justify-self:end}
-      .nav-center{grid-area:center; justify-self:center}
-      .logo-text{max-width:220px}
     }
   </style>
 </head>
@@ -226,8 +254,8 @@
 <header>
   <div class="container nav">
     <div class="logo-area">
-      <img src="logo-depannage.png" alt="Rapid Dépannage Auto" class="logo-icon">
-      <div class="logo-text">RAPID DÉPANNAGE AUTO</div>
+      <img src="logo-rapid-auto.jpg" class="logo-icon" alt="Logo Rapid Auto Plus">
+      <a href="index.html#top" class="logo">RAPID AUTO PLUS</a>
     </div>
 
     <nav class="nav-center" aria-label="Navigation">
@@ -236,16 +264,17 @@
     </nav>
 
     <div class="nav-right">
-      <a href="tel:0757823868" class="btn-call">📞 24/7</a>
+      <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
+      <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
     </div>
   </div>
 </header>
 
 <main id="top">
 
-<section class="hero">
+<section class="hero fade-in">
   <div class="container hero-grid">
-    <div>
+    <div class="fade-in">
       <div class="pill"><span></span>DÉPANNAGE EN URGENCE</div>
 
       <h1>Dépannage auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
@@ -254,11 +283,11 @@
       <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
 
       <div class="hero-actions">
-        <a href="tel:0757823868" class="btn-call">📞 Appeler maintenant</a>
+        <a href="tel:0757823868" class="btn-primary">📞 Appeler maintenant</a>
       </div>
     </div>
 
-    <div class="hero-box">
+    <div class="hero-box fade-in-right">
       <strong>Zone d’intervention</strong>
       <p>Île-de-France & alentours</p>
       <p>Auto • Moto • Poids lourds</p>
@@ -270,37 +299,37 @@
 </section>
 
 <section>
-  <div class="container">
+  <div class="container fade-in">
     <h2 class="section-title">Nos services de dépannage</h2>
     <p class="section-subtitle">Urgence uniquement — sans rendez-vous</p>
 
     <div class="cards">
-      <div class="card">
+      <div class="card fade-in">
         🚗 <strong>Dépannage auto</strong><br>
         Panne, véhicule immobilisé, démarrage impossible : intervention rapide selon la zone.
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         🏍️ <strong>Dépannage moto</strong><br>
         Assistance moto (panne, batterie à plat) et prise en charge sécurisée selon situation.
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         🚛 <strong>Dépannage poids lourds</strong><br>
         Interventions adaptées : sécurisation, assistance et organisation du remorquage si nécessaire.
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         🛞 <strong>Changement de pneu</strong><br>
         Pneu crevé : assistance sur place et remplacement si conditions de sécurité OK.
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         🔋 <strong>Booster batterie</strong><br>
         Batterie à plat : booster / redémarrage rapide pour repartir au plus vite.
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         🧰 <strong>Assistance & remorquage</strong><br>
         Diagnostic rapide : dépannage sur place ou remorquage selon l’état du véhicule.
       </div>
@@ -309,12 +338,12 @@
 </section>
 
 <section>
-  <div class="container">
+  <div class="container fade-in">
     <div class="cta">
       <h2>🚨 Besoin d’un dépannage immédiat ?</h2>
       <p>Appelez et indiquez votre localisation et le type de panne</p>
       <div style="margin-top:18px">
-        <a href="tel:0757823868" class="btn-call">📞 Appel immédiat</a>
+        <a href="tel:0757823868" class="btn-primary">📞 Appel immédiat</a>
       </div>
     </div>
   </div>
@@ -327,15 +356,30 @@
 </footer>
 
 <script>
-  document.querySelectorAll('a[href^="tel"]').forEach(el=>{
-    el.addEventListener("click",()=>{
-      if(typeof gtag==="function"){
-        gtag('event','conversion',{
-          'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
-          'value':1,
-          'currency':'EUR'
-        });
-      }
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Animations identiques à index
+    document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          el.classList.add("visible");
+          obs.disconnect();
+        }
+      }, { threshold: 0.2 });
+
+      obs.observe(el);
+    });
+
+    // ✅ Conversion Google Ads sur clic tel:
+    document.querySelectorAll('a[href^="tel"]').forEach(el=>{
+      el.addEventListener("click",()=>{
+        if(typeof gtag==="function"){
+          gtag('event','conversion',{
+            'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
+            'value':1,
+            'currency':'EUR'
+          });
+        }
+      });
     });
   });
 </script>
