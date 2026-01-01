@@ -24,7 +24,7 @@
     a{text-decoration:none;color:inherit}
     .container{max-width:1100px;margin:auto;padding:0 16px}
 
-    /* HEADER */
+    /* HEADER (centrage garanti comme l’autre page) */
     header{
       background:#0f172a;
       color:white;
@@ -33,34 +33,44 @@
       top:0;
       z-index:100;
     }
+
+    /* ✅ GRID = centre réel, même si gauche/droite ont des largeurs différentes */
     .nav{
-      display:flex;
+      display:grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items:center;
-      justify-content:space-between;
       gap:12px;
+      width:100%;
     }
+
     .logo-area{
       display:flex;
       align-items:center;
       gap:10px;
+      justify-self:start;
+      min-width:0;
     }
     .logo-icon{
       height:42px;
       width:auto;
       object-fit:contain;
+      display:block;
     }
     .logo-text{
       font-weight:800;
       letter-spacing:.06em;
       font-size:.95rem;
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:320px;
     }
 
-    /* ✅ NAV CENTRÉE */
+    /* menu vraiment centré */
     .nav-center{
       display:flex;
       gap:10px;
-      margin:0 auto;            /* ⬅️ CENTRAGE RÉEL */
+      justify-self:center;
       align-items:center;
     }
     .nav-link{
@@ -70,15 +80,16 @@
       font-size:.8rem;
       font-weight:600;
       transition:.2s;
+      white-space:nowrap;
     }
-    .nav-link:hover{
-      background:rgba(255,255,255,.12);
-    }
-    .nav-link.active{
-      background:rgba(255,255,255,.18);
-      border-color:white;
-    }
+    .nav-link:hover{background:rgba(255,255,255,.12)}
+    .nav-link.active{background:rgba(255,255,255,.18);border-color:white}
 
+    .nav-right{
+      justify-self:end;
+      display:flex;
+      align-items:center;
+    }
     .btn-call{
       background:#ef4444;
       color:white;
@@ -87,22 +98,24 @@
       font-weight:800;
       font-size:.8rem;
       white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      transition:.2s;
     }
+    .btn-call:hover{background:#dc2626;transform:translateY(-1px)}
 
     /* HERO */
     .hero{
       padding:80px 0;
-      background:linear-gradient(
-        135deg,
-        rgba(15,23,42,.85),
-        rgba(239,68,68,.35)
-      );
+      background:linear-gradient(135deg,rgba(15,23,42,.85),rgba(239,68,68,.35));
       color:white;
     }
     .hero-grid{
       display:grid;
       grid-template-columns:1.6fr 1fr;
       gap:40px;
+      align-items:start;
     }
     .pill{
       display:inline-flex;
@@ -116,9 +129,7 @@
       margin-bottom:14px;
     }
     .pill span{
-      width:8px;
-      height:8px;
-      border-radius:50%;
+      width:8px;height:8px;border-radius:50%;
       background:#facc15;
     }
     h1{
@@ -136,6 +147,7 @@
       display:flex;
       gap:12px;
       flex-wrap:wrap;
+      align-items:center;
     }
 
     .hero-box{
@@ -173,7 +185,9 @@
       border:1px solid #e5e7eb;
       box-shadow:0 10px 30px rgba(0,0,0,.06);
       font-size:.95rem;
+      line-height:1.45;
     }
+    .card strong{display:inline-block;margin-bottom:6px}
 
     /* CTA */
     .cta{
@@ -194,8 +208,15 @@
 
     @media(max-width:768px){
       .hero-grid{grid-template-columns:1fr}
-      .nav{flex-wrap:wrap}
-      .nav-center{width:100%;justify-content:center}
+      .nav{grid-template-columns: 1fr 1fr; grid-template-areas:
+        "left right"
+        "center center";
+        row-gap:10px;
+      }
+      .logo-area{grid-area:left}
+      .nav-right{grid-area:right; justify-self:end}
+      .nav-center{grid-area:center; justify-self:center}
+      .logo-text{max-width:220px}
     }
   </style>
 </head>
@@ -209,12 +230,14 @@
       <div class="logo-text">RAPID DÉPANNAGE AUTO</div>
     </div>
 
-    <nav class="nav-center">
+    <nav class="nav-center" aria-label="Navigation">
       <a href="index.html" class="nav-link">Pare-brise</a>
       <a href="depannage.html" class="nav-link active">Dépannage</a>
     </nav>
 
-    <a href="tel:0757823868" class="btn-call">📞 24/7</a>
+    <div class="nav-right">
+      <a href="tel:0757823868" class="btn-call">📞 24/7</a>
+    </div>
   </div>
 </header>
 
@@ -252,12 +275,35 @@
     <p class="section-subtitle">Urgence uniquement — sans rendez-vous</p>
 
     <div class="cards">
-      <div class="card">🚗 <strong>Dépannage auto</strong><br>Panne, immobilisation, démarrage impossible</div>
-      <div class="card">🏍️ <strong>Dépannage moto</strong><br>Assistance & transport sécurisé</div>
-      <div class="card">🚛 <strong>Dépannage poids lourds</strong><br>Intervention & sécurisation</div>
-      <div class="card">🛞 <strong>Changement de pneu</strong><br>Assistance sur place</div>
-      <div class="card">🔋 <strong>Booster batterie</strong><br>Démarrage immédiat</div>
-      <div class="card">🧰 <strong>Assistance & remorquage</strong><br>Selon diagnostic</div>
+      <div class="card">
+        🚗 <strong>Dépannage auto</strong><br>
+        Panne, véhicule immobilisé, démarrage impossible : intervention rapide selon la zone.
+      </div>
+
+      <div class="card">
+        🏍️ <strong>Dépannage moto</strong><br>
+        Assistance moto (panne, batterie à plat) et prise en charge sécurisée selon situation.
+      </div>
+
+      <div class="card">
+        🚛 <strong>Dépannage poids lourds</strong><br>
+        Interventions adaptées : sécurisation, assistance et organisation du remorquage si nécessaire.
+      </div>
+
+      <div class="card">
+        🛞 <strong>Changement de pneu</strong><br>
+        Pneu crevé : assistance sur place et remplacement si conditions de sécurité OK.
+      </div>
+
+      <div class="card">
+        🔋 <strong>Booster batterie</strong><br>
+        Batterie à plat : booster / redémarrage rapide pour repartir au plus vite.
+      </div>
+
+      <div class="card">
+        🧰 <strong>Assistance & remorquage</strong><br>
+        Diagnostic rapide : dépannage sur place ou remorquage selon l’état du véhicule.
+      </div>
     </div>
   </div>
 </section>
