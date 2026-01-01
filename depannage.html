@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rapid Dépannage Auto – Urgence 24h/24 & 7j/7</title>
+  <title>Rapid Dépannage Auto – Dépannage 24h/24 & 7j/7</title>
 
   <!-- FAVICONS -->
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="favicon.ico">
 
   <!-- GOOGLE ADS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17799257107"></script>
@@ -21,61 +18,163 @@
   </script>
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
     body{background:#f3f4f6;color:#111827;line-height:1.6}
     a{text-decoration:none;color:inherit}
     .container{max-width:1100px;margin:auto;padding:0 16px}
 
-    header{background:#111827;color:white;padding:10px 0;position:sticky;top:0;z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .logo-area{display:flex;align-items:center;gap:8px}
-    .logo-icon{width:34px;height:34px;border-radius:6px;object-fit:contain;background:white;padding:3px}
-    .logo{font-weight:800;letter-spacing:.05em;font-size:.95rem}
-
-    .nav-center{display:flex;gap:8px}
-    .nav-link{padding:7px 12px;border-radius:999px;border:1px solid #ffffff55;font-size:.75rem}
-    .nav-link.active{background:#ffffff18;border-color:#ffffffcc}
-
-    .btn-phone,.btn-primary{
-      background:#ef4444;color:white;padding:8px 14px;
-      border-radius:999px;font-weight:800;font-size:.8rem
+    /* HEADER */
+    header{
+      background:#0f172a;
+      color:white;
+      padding:14px 0;
+      position:sticky;
+      top:0;
+      z-index:50
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px
+    }
+    .logo-area{
+      display:flex;
+      align-items:center;
+      gap:14px
+    }
+    .logo-icon{
+      width:64px;
+      height:64px;
+      background:white;
+      padding:8px;
+      border-radius:14px;
+      object-fit:contain;
+    }
+    .logo{
+      font-size:1.15rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      white-space:nowrap;
     }
 
+    .nav-center{
+      display:flex;
+      gap:10px
+    }
+    .nav-link{
+      padding:8px 16px;
+      border-radius:999px;
+      border:1px solid #ffffff55;
+      font-size:.8rem;
+      font-weight:600;
+      transition:.2s;
+    }
+    .nav-link.active{
+      background:#ffffff22;
+      border-color:white;
+    }
+
+    .btn-phone{
+      background:#ef4444;
+      color:white;
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.85rem;
+    }
+
+    /* HERO */
     .hero{
-      padding:70px 0;
-      background:linear-gradient(135deg,rgba(15,23,42,.85),rgba(239,68,68,.3));
+      padding:80px 0;
+      background:linear-gradient(135deg,#111827,#7c2d12);
       color:white
     }
-    .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px}
-    .pill{
-      display:inline-flex;gap:8px;align-items:center;
-      background:#ef4444;padding:6px 14px;
-      border-radius:999px;font-weight:900;font-size:.75rem;
-      margin-bottom:12px
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.5fr 1fr;
+      gap:40px
     }
-    .dot{width:8px;height:8px;border-radius:50%;background:#facc15}
-    h1{font-size:clamp(1.8rem,3vw,2.3rem);margin-bottom:10px}
-    .hero p{opacity:.95;margin-bottom:8px}
-    .hero-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:#ef4444;
+      padding:8px 18px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:.8rem;
+      margin-bottom:16px
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#facc15
+    }
+    h1{
+      font-size:clamp(2rem,3vw,2.6rem);
+      margin-bottom:14px
+    }
+    .hero p{
+      font-size:1rem;
+      opacity:.95;
+      margin-bottom:10px
+    }
+    .hero-actions{
+      margin-top:20px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap
+    }
 
-    section{padding:60px 0}
-    section:nth-child(even){background:white}
-    .section-title{text-align:center;font-size:1.4rem}
-    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:20px}
-
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
     .card{
-      background:white;padding:18px;border-radius:16px;
-      border:1px solid #e5e7eb;box-shadow:0 8px 22px rgba(0,0,0,.05)
+      background:white;
+      color:#111827;
+      padding:22px;
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(0,0,0,.15)
+    }
+
+    /* SERVICES */
+    section{padding:70px 0}
+    .section-title{
+      text-align:center;
+      font-size:1.6rem;
+      font-weight:800;
+      margin-bottom:10px
+    }
+    .section-subtitle{
+      text-align:center;
+      color:#6b7280;
+      margin-bottom:30px
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px
+    }
+    .service{
+      background:white;
+      padding:22px;
+      border-radius:16px;
+      border:1px solid #e5e7eb;
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+      font-weight:600
     }
 
     footer{
-      background:#111827;color:#9ca3af;
-      text-align:center;padding:18px;font-size:.85rem
+      background:#0f172a;
+      color:#9ca3af;
+      text-align:center;
+      padding:20px;
+      font-size:.85rem
     }
 
     @media(max-width:768px){
       .hero-grid{grid-template-columns:1fr}
+      .logo-icon{width:56px;height:56px}
+      .logo{font-size:1rem}
     }
   </style>
 </head>
@@ -85,33 +184,25 @@
 <header>
   <div class="container nav">
     <div class="logo-area">
-      <!-- ✅ LOGO (corrigé) -->
-      <img
-        src="./logo-depannage.png"
-        class="logo-icon"
-        alt="Logo Rapid Dépannage Auto"
-        onerror="this.onerror=null; this.src='img/logo-depannage.png';"
-      >
-      <a href="depannage.html#top" class="logo">RAPID DÉPANNAGE AUTO</a>
+      <img src="logo-depannage.png" alt="Logo Rapid Dépannage Auto" class="logo-icon">
+      <span class="logo">RAPID DÉPANNAGE AUTO</span>
     </div>
 
     <nav class="nav-center">
-      <a class="nav-link" href="index.html">Pare-brise</a>
-      <a class="nav-link active" href="depannage.html">Dépannage</a>
+      <a href="index.html" class="nav-link">Pare-brise</a>
+      <a href="depannage.html" class="nav-link active">Dépannage</a>
     </nav>
 
-    <div class="nav-right">
-      <a href="tel:0757823868" class="btn-phone">📞 24/7</a>
-    </div>
+    <a href="tel:0757823868" class="btn-phone">📞 24/7</a>
   </div>
 </header>
 
-<main id="top">
+<main>
 
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="pill"><span class="dot"></span> DÉPANNAGE EN URGENCE</div>
+      <div class="pill"><span class="dot"></span>DÉPANNAGE EN URGENCE</div>
 
       <h1>Dépannage auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
 
@@ -119,42 +210,32 @@
       <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
 
       <div class="hero-actions">
-        <a href="tel:0757823868" class="btn-primary">📞 Appeler maintenant</a>
+        <a href="tel:0757823868" class="btn-phone">📞 Appeler maintenant</a>
       </div>
     </div>
 
     <div class="card">
       <strong>Zone d’intervention</strong>
       <p>Île-de-France & alentours<br>Selon distance et disponibilité</p>
-      <p style="font-size:.8rem;opacity:.85;margin-top:6px">
+      <p style="font-size:.85rem;margin-top:8px">
         En cas de danger immédiat, mettez-vous en sécurité avant d’appeler.
       </p>
     </div>
   </div>
 </section>
 
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">Nos services de dépannage</h2>
-    <p class="section-subtitle">Intervention rapide – Urgence uniquement</p>
-
-    <div class="cards">
-      <div class="card">🚗 <strong>Dépannage auto</strong><br>Panne, immobilisation, démarrage impossible</div>
-      <div class="card">🏍️ <strong>Dépannage moto</strong><br>Batterie, panne, transport sécurisé</div>
-      <div class="card">🚛 <strong>Poids lourds</strong><br>Assistance & sécurisation</div>
-      <div class="card">🛞 <strong>Pneu crevé</strong><br>Remplacement / assistance</div>
-      <div class="card">🔋 <strong>Batterie à plat</strong><br>Booster / redémarrage</div>
-      <div class="card">🧰 <strong>Remorquage</strong><br>Selon diagnostic et situation</div>
-    </div>
-  </div>
-</section>
-
 <section>
   <div class="container">
-    <h2 class="section-title">🚨 Urgence 24/7</h2>
-    <p class="section-subtitle">Appelez et décrivez la situation</p>
-    <div style="text-align:center;margin-top:20px">
-      <a href="tel:0757823868" class="btn-primary">📞 Appel immédiat</a>
+    <h2 class="section-title">Nos services</h2>
+    <p class="section-subtitle">Urgence uniquement</p>
+
+    <div class="cards">
+      <div class="service">🚗 Dépannage auto</div>
+      <div class="service">🏍️ Dépannage moto</div>
+      <div class="service">🚛 Dépannage poids lourds</div>
+      <div class="service">🛞 Changement de pneu</div>
+      <div class="service">🔋 Booster batterie</div>
+      <div class="service">🧰 Remorquage</div>
     </div>
   </div>
 </section>
