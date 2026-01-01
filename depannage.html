@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rapid Dépannage Auto – Urgence 24h/24 & 7j/7</title>
 
-  <!-- FAVICON -->
   <link rel="icon" href="favicon.ico">
 
   <!-- GOOGLE ADS -->
@@ -23,7 +22,7 @@
     a{text-decoration:none;color:inherit}
     .container{max-width:1100px;margin:auto;padding:0 16px}
 
-    /* ===== HEADER (IDENTIQUE INDEX) ===== */
+    /* ===== HEADER ===== */
     header{
       background:#0f172a;
       color:white;
@@ -39,21 +38,22 @@
       gap:10px;
       flex-wrap:nowrap;
     }
+
     .logo-area{
       display:flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
       flex-shrink:0;
     }
     .logo-icon{
-      height:34px;
+      height:50px;
       width:auto;
       object-fit:contain;
     }
     .logo-text{
       font-weight:800;
       letter-spacing:.06em;
-      font-size:.9rem;
+      font-size:1rem;
       white-space:nowrap;
     }
 
@@ -61,7 +61,6 @@
       display:flex;
       gap:8px;
       justify-content:center;
-      flex-shrink:0;
     }
     .nav-link{
       padding:7px 12px;
@@ -79,7 +78,6 @@
     .nav-right{
       display:flex;
       gap:8px;
-      flex-shrink:0;
     }
     .btn-call,.btn-rdv{
       background:#ef4444;
@@ -93,7 +91,7 @@
 
     /* ===== HERO ===== */
     .hero{
-      padding:70px 0;
+      padding:80px 0;
       background:linear-gradient(135deg,rgba(15,23,42,.85),rgba(239,68,68,.35));
       color:white;
     }
@@ -113,38 +111,28 @@
       font-size:.75rem;
       margin-bottom:14px;
     }
-    .pill span{
-      width:8px;height:8px;border-radius:50%;background:#facc15;
-    }
+    .pill span{width:8px;height:8px;border-radius:50%;background:#facc15}
     h1{
       font-size:clamp(2rem,3.2vw,2.6rem);
       margin-bottom:14px;
       line-height:1.2;
     }
     .hero p{opacity:.95;margin-bottom:10px}
-    .hero-actions{margin-top:18px}
 
     .hero-box{
       background:rgba(15,23,42,.9);
       border:1px solid rgba(255,255,255,.15);
       border-radius:18px;
-      padding:20px;
+      padding:22px;
+      font-size:.95rem;
     }
 
     /* ===== SECTIONS ===== */
     section{padding:70px 0}
     section:nth-of-type(even){background:white}
 
-    .section-title{
-      text-align:center;
-      font-size:1.6rem;
-      margin-bottom:6px;
-    }
-    .section-subtitle{
-      text-align:center;
-      color:#6b7280;
-      margin-bottom:30px;
-    }
+    .section-title{text-align:center;font-size:1.6rem;margin-bottom:6px}
+    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:30px}
 
     .cards{
       display:grid;
@@ -157,9 +145,10 @@
       border-radius:18px;
       border:1px solid #e5e7eb;
       box-shadow:0 10px 30px rgba(0,0,0,.06);
+      font-size:.95rem;
     }
+    .card p{margin-top:6px;color:#4b5563}
 
-    /* ===== CTA ===== */
     .cta{
       background:#0f172a;
       color:white;
@@ -185,9 +174,9 @@
       .hero-grid{grid-template-columns:1fr}
     }
     @media(max-width:480px){
-      .logo-text{display:none;}
-      .logo-icon{height:26px}
-      .nav{gap:6px}
+      .logo-icon{height:46px}
+      .logo-text{display:none}
+      .nav-right{display:none}
     }
   </style>
 </head>
@@ -222,7 +211,7 @@
       <h1>Dépannage auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
       <p><strong>Urgence uniquement</strong> — pas de prise de rendez-vous</p>
       <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
-      <div class="hero-actions">
+      <div style="margin-top:16px">
         <a href="tel:0757823868" class="btn-call">📞 Appeler maintenant</a>
       </div>
     </div>
@@ -231,7 +220,7 @@
       <strong>Zone d’intervention</strong>
       <p>Île-de-France & alentours</p>
       <p>Auto • Moto • Poids lourds</p>
-      <p style="opacity:.85;font-size:.85rem;margin-top:10px">
+      <p style="opacity:.85;margin-top:8px">
         Intervention immédiate selon disponibilité et distance.
       </p>
     </div>
@@ -244,12 +233,30 @@
     <p class="section-subtitle">Urgence uniquement — sans rendez-vous</p>
 
     <div class="cards">
-      <div class="card">🚗 <strong>Dépannage auto</strong><br>Panne, immobilisation</div>
-      <div class="card">🏍️ <strong>Dépannage moto</strong><br>Assistance & transport</div>
-      <div class="card">🚛 <strong>Poids lourds</strong><br>Sécurisation</div>
-      <div class="card">🛞 <strong>Changement de pneu</strong></div>
-      <div class="card">🔋 <strong>Booster batterie</strong></div>
-      <div class="card">🧰 <strong>Assistance & remorquage</strong></div>
+      <div class="card">
+        🚗 <strong>Dépannage auto</strong>
+        <p>Panne, véhicule immobilisé, démarrage impossible.</p>
+      </div>
+      <div class="card">
+        🏍️ <strong>Dépannage moto</strong>
+        <p>Assistance rapide et transport sécurisé si nécessaire.</p>
+      </div>
+      <div class="card">
+        🚛 <strong>Dépannage poids lourds</strong>
+        <p>Intervention et sécurisation selon la situation.</p>
+      </div>
+      <div class="card">
+        🛞 <strong>Changement de pneu</strong>
+        <p>Remplacement ou assistance sur place.</p>
+      </div>
+      <div class="card">
+        🔋 <strong>Booster batterie</strong>
+        <p>Démarrage immédiat en cas de batterie à plat.</p>
+      </div>
+      <div class="card">
+        🧰 <strong>Assistance & remorquage</strong>
+        <p>Orientation rapide selon le diagnostic.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -258,8 +265,8 @@
   <div class="container">
     <div class="cta">
       <h2>🚨 Besoin d’un dépannage immédiat ?</h2>
-      <p>Appelez et indiquez votre localisation</p>
-      <div style="margin-top:16px">
+      <p>Appelez-nous et indiquez votre localisation et le type de panne.</p>
+      <div style="margin-top:18px">
         <a href="tel:0757823868" class="btn-call">📞 Appel immédiat</a>
       </div>
     </div>
@@ -269,7 +276,7 @@
 </main>
 
 <footer>
-  © Rapid Dépannage Auto — 24h/24 • 7j/7 — Versailles
+  © Rapid Dépannage Auto — Intervention 24h/24 • 7j/7 — Versailles
 </footer>
 
 <script>
