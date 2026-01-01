@@ -29,7 +29,7 @@
     header{background:#111827;color:white;padding:10px 0;position:sticky;top:0;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .logo-area{display:flex;align-items:center;gap:8px}
-    .logo-icon{width:32px;height:32px;border-radius:6px;object-fit:cover}
+    .logo-icon{width:34px;height:34px;border-radius:6px;object-fit:contain;background:white;padding:3px}
     .logo{font-weight:800;letter-spacing:.05em;font-size:.95rem}
 
     .nav-center{display:flex;gap:8px}
@@ -38,7 +38,7 @@
 
     .btn-phone,.btn-primary{
       background:#ef4444;color:white;padding:8px 14px;
-      border-radius:999px;font-weight:700;font-size:.8rem
+      border-radius:999px;font-weight:800;font-size:.8rem
     }
 
     .hero{
@@ -50,7 +50,7 @@
     .pill{
       display:inline-flex;gap:8px;align-items:center;
       background:#ef4444;padding:6px 14px;
-      border-radius:999px;font-weight:800;font-size:.75rem;
+      border-radius:999px;font-weight:900;font-size:.75rem;
       margin-bottom:12px
     }
     .dot{width:8px;height:8px;border-radius:50%;background:#facc15}
@@ -85,7 +85,7 @@
 <header>
   <div class="container nav">
     <div class="logo-area">
-      <img src="logo-rapid-auto.jpg" class="logo-icon" alt="Logo Rapid Dépannage Auto">
+      <img src="logo-rapid-depannage-auto.png" class="logo-icon" alt="Logo Rapid Dépannage Auto">
       <a href="depannage.html#top" class="logo">RAPID DÉPANNAGE AUTO</a>
     </div>
 
@@ -165,7 +165,8 @@
       if(typeof gtag==="function"){
         gtag('event','conversion',{
           'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
-          'value':1,'currency':'EUR'
+          'value':1,
+          'currency':'EUR'
         });
       }
     });
