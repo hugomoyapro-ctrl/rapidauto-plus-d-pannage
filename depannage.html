@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rapid Dépannage Auto – Urgence 24h/24 & 7j/7</title>
 
-  <!-- FAVICONS -->
-  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.ico">
   <meta name="theme-color" content="#111827">
 
-  <!-- GOOGLE ADS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17799257107"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,88 +17,44 @@
   </script>
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
     body{background:#f3f4f6;color:#111827;line-height:1.6}
     a{text-decoration:none;color:inherit}
     .container{max-width:1100px;margin:auto;padding:0 16px}
 
-    /* HEADER (IDENTIQUE À INDEX) */
-    header{
-      background:#0f172a;
-      color:white;
-      padding:12px 0;
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .logo-icon{
-      height:42px;
-      width:auto;
-      object-fit:contain;
-    }
-    .logo-text{
-      font-weight:800;
-      letter-spacing:.06em;
-      font-size:.95rem;
-      white-space:nowrap;
-    }
+    header{background:#0f172a;color:white;padding:12px 0;position:sticky;top:0;z-index:100}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo-area{display:flex;align-items:center;gap:10px}
+    .logo-icon{height:42px}
+    .logo-text{font-weight:800;font-size:.95rem;letter-spacing:.06em}
 
-    .nav-center{
-      display:flex;
-      gap:10px;
-    }
-    .nav-link{
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.35);
-      font-size:.8rem;
-      font-weight:600;
-      transition:.2s;
-    }
-    .nav-link:hover{
-      background:rgba(255,255,255,.12);
-    }
-    .nav-link.active{
-      background:rgba(255,255,255,.18);
-      border-color:white;
-    }
+    .nav-center{display:flex;gap:10px}
+    .nav-link{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);font-size:.8rem}
+    .nav-link.active{background:rgba(255,255,255,.18);border-color:white}
 
     .btn-call{
       background:#ef4444;
       color:white;
-      padding:9px 16px;
+      padding:9px 18px;
       border-radius:999px;
-      font-weight:800;
-      font-size:.8rem;
-      white-space:nowrap;
+      font-weight:900;
+      font-size:.85rem;
     }
 
     /* HERO */
     .hero{
       padding:80px 0;
-      background:linear-gradient(
-        135deg,
-        rgba(15,23,42,.85),
-        rgba(239,68,68,.35)
-      );
+      background:linear-gradient(135deg,rgba(15,23,42,.85),rgba(239,68,68,.35));
       color:white;
+      text-align:center; /* ✅ CENTRAGE TEXTE */
     }
     .hero-grid{
       display:grid;
-      grid-template-columns:1.6fr 1fr;
-      gap:40px;
+      grid-template-columns:1fr;
+      gap:32px;
+      justify-items:center;
     }
+
     .pill{
       display:inline-flex;
       align-items:center;
@@ -112,51 +66,23 @@
       font-size:.75rem;
       margin-bottom:14px;
     }
-    .pill span{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#facc15;
-    }
-    h1{
-      font-size:clamp(2rem,3.2vw,2.6rem);
-      margin-bottom:14px;
-      line-height:1.2;
-    }
-    .hero p{
-      opacity:.95;
-      margin-bottom:10px;
-      font-size:.95rem;
-    }
+    .pill span{width:8px;height:8px;border-radius:50%;background:#facc15}
+
+    h1{font-size:clamp(2rem,3.2vw,2.6rem);margin-bottom:14px}
+
     .hero-actions{
-      margin-top:18px;
+      margin-top:22px;
       display:flex;
-      gap:12px;
+      justify-content:center; /* ✅ CENTRAGE BOUTONS */
+      gap:14px;
       flex-wrap:wrap;
     }
 
-    .hero-box{
-      background:rgba(15,23,42,.9);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:18px;
-      padding:20px;
-      font-size:.9rem;
-    }
-
-    /* SECTIONS */
     section{padding:70px 0}
     section:nth-of-type(even){background:white}
 
-    .section-title{
-      text-align:center;
-      font-size:1.6rem;
-      margin-bottom:6px;
-    }
-    .section-subtitle{
-      text-align:center;
-      color:#6b7280;
-      margin-bottom:30px;
-    }
+    .section-title{text-align:center;font-size:1.6rem;margin-bottom:6px}
+    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:30px}
 
     .cards{
       display:grid;
@@ -169,7 +95,7 @@
       border-radius:18px;
       border:1px solid #e5e7eb;
       box-shadow:0 10px 30px rgba(0,0,0,.06);
-      font-size:.95rem;
+      text-align:center;
     }
 
     /* CTA */
@@ -180,6 +106,11 @@
       border-radius:22px;
       text-align:center;
     }
+    .cta-actions{
+      margin-top:20px;
+      display:flex;
+      justify-content:center; /* ✅ CENTRAGE BOUTON CTA */
+    }
 
     footer{
       background:#0f172a;
@@ -187,10 +118,6 @@
       text-align:center;
       padding:20px;
       font-size:.85rem;
-    }
-
-    @media(max-width:768px){
-      .hero-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -200,7 +127,7 @@
 <header>
   <div class="container nav">
     <div class="logo-area">
-      <img src="logo-depannage.png" alt="Rapid Dépannage Auto" class="logo-icon">
+      <img src="logo-depannage.png" class="logo-icon" alt="Rapid Dépannage Auto">
       <div class="logo-text">RAPID DÉPANNAGE AUTO</div>
     </div>
 
@@ -213,7 +140,7 @@
   </div>
 </header>
 
-<main id="top">
+<main>
 
 <section class="hero">
   <div class="container hero-grid">
@@ -222,47 +149,23 @@
 
       <h1>Dépannage auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
 
-      <p><strong>Urgence uniquement</strong> — pas de prise de rendez-vous</p>
+      <p><strong>Urgence uniquement</strong> — pas de rendez-vous</p>
       <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
 
       <div class="hero-actions">
         <a href="tel:0757823868" class="btn-call">📞 Appeler maintenant</a>
       </div>
     </div>
-
-    <div class="hero-box">
-      <strong>Zone d’intervention</strong>
-      <p>Île-de-France & alentours</p>
-      <p>Auto • Moto • Poids lourds</p>
-      <p style="font-size:.8rem;opacity:.85;margin-top:10px">
-        Intervention immédiate selon disponibilité et distance.
-      </p>
-    </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 class="section-title">Nos services de dépannage</h2>
-    <p class="section-subtitle">Urgence uniquement — sans rendez-vous</p>
+    <h2 class="section-title">🚨 Besoin d’un dépannage immédiat ?</h2>
+    <p class="section-subtitle">Appelez-nous maintenant</p>
 
-    <div class="cards">
-      <div class="card">🚗 <strong>Dépannage auto</strong><br>Panne, immobilisation, démarrage impossible</div>
-      <div class="card">🏍️ <strong>Dépannage moto</strong><br>Assistance & transport sécurisé</div>
-      <div class="card">🚛 <strong>Dépannage poids lourds</strong><br>Intervention & sécurisation</div>
-      <div class="card">🛞 <strong>Changement de pneu</strong><br>Assistance sur place</div>
-      <div class="card">🔋 <strong>Booster batterie</strong><br>Démarrage immédiat</div>
-      <div class="card">🧰 <strong>Assistance & remorquage</strong><br>Selon diagnostic</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
     <div class="cta">
-      <h2>🚨 Besoin d’un dépannage immédiat ?</h2>
-      <p>Appelez et indiquez votre localisation et le type de panne</p>
-      <div style="margin-top:18px">
+      <div class="cta-actions">
         <a href="tel:0757823868" class="btn-call">📞 Appel immédiat</a>
       </div>
     </div>
@@ -274,20 +177,6 @@
 <footer>
   © Rapid Dépannage Auto — Intervention 24h/24 • 7j/7 — Versailles
 </footer>
-
-<script>
-  document.querySelectorAll('a[href^="tel"]').forEach(el=>{
-    el.addEventListener("click",()=>{
-      if(typeof gtag==="function"){
-        gtag('event','conversion',{
-          'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
-          'value':1,
-          'currency':'EUR'
-        });
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
