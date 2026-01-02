@@ -1,258 +1,176 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rapid Dépannage Auto - Dépannage & assistance 24h/24 - 7j/7</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapid Dépannage Auto – Dépannage & assistance 24h/24</title>
 
-  <!-- ✅ FAVICONS / LOGOS -->
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#111827">
+<link rel="icon" href="favicon.ico" sizes="any">
+<meta name="theme-color" content="#111827">
 
-  <!-- ✅ GOOGLE ADS TAG -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17799257107"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17799257107');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17799257107"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17799257107');
+</script>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    body{background:#f3f4f6;color:#111827;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+body{background:#f3f4f6;color:#111827;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:auto;padding:0 16px}
 
-    /* ✅ HEADER = IDENTIQUE À TA PAGE PARE-BRISE */
-    header{
-      background:#111827;
-      color:white;
-      padding:10px 0;
-      position:sticky;
-      top:0;
-      z-index:50;
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      width:100%;
-    }
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      flex-shrink:0;
-      min-width:0;
-    }
-    .logo-icon{
-      width:30px;
-      height:30px;
-      border-radius:6px;
-      object-fit:contain;
-      display:block;
-    }
-    .logo{
-      font-weight:700;
-      font-size:1rem;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      white-space:nowrap;
-      min-width:0;
-    }
+/* ================= HEADER ================= */
+header{
+  background:#111827;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 0;
+}
 
-    .nav-right{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex-shrink:0;
-      white-space:nowrap;
-    }
+/* logo */
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.logo-icon{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+}
+.logo{
+  font-weight:800;
+  letter-spacing:.05em;
+  font-size:.95rem;
+  white-space:nowrap;
+}
 
-    .btn-primary,.btn-phone{
-      background:#ef4444;
-      color:white;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.8rem;
-      font-weight:600;
-      transition:.2s;
-      border:none;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
-    }
-    .btn-primary:hover,.btn-phone:hover{background:#dc2626;transform:translateY(-1px)}
-    .btn-outline{
-      border-radius:999px;
-      padding:8px 12px;
-      border:1px solid #ffffff55;
-      color:#f9fafb;
-      background:transparent;
-      font-size:.8rem;
-      font-weight:500;
-      cursor:pointer;
-      transition:.2s;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
-    }
-    .btn-outline:hover{background:#ffffff11;border-color:#ffffffaa}
+/* nav pages */
+.nav-center{
+  display:flex;
+  gap:8px;
+}
+.nav-link{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.8rem;
+  font-weight:600;
+}
+.nav-link.active{
+  background:rgba(255,255,255,.18);
+  border-color:#fff;
+}
 
-    /* HERO */
-    .hero{
-      padding:70px 0 80px;
-      background:linear-gradient(135deg, rgba(15,23,42,.75), rgba(239,68,68,.28));
-      color:white;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
-      gap:40px;
-    }
+/* boutons PC */
+.nav-right{
+  display:flex;
+  gap:8px;
+}
+.btn-phone,.btn-primary{
+  background:#ef4444;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+}
 
-    .hero-offer{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:rgba(239,68,68,.9);
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:.8rem;
-      font-weight:700;
-      margin-bottom:12px;
-      box-shadow:0 10px 25px rgba(0,0,0,.30);
-    }
-    .hero-offer span{
-      background:#facc15;
-      color:#111827;
-      font-size:.7rem;
-      padding:2px 6px;
-      border-radius:999px;
-      font-weight:800;
-    }
+/* ================= HERO ================= */
+.hero{
+  padding:70px 0;
+  background:linear-gradient(135deg,rgba(15,23,42,.85),rgba(239,68,68,.35));
+  color:#fff;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:40px;
+}
+.hero h1{
+  font-size:clamp(2rem,3vw,2.5rem);
+  margin-bottom:12px;
+}
+.hero p{margin-bottom:10px;opacity:.95}
+.hero-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.hero-box{
+  background:rgba(15,23,42,.9);
+  padding:18px;
+  border-radius:16px;
+  font-size:.9rem;
+}
 
-    .hero h1{
-      font-size:clamp(2rem,3.2vw,2.6rem);
-      margin-bottom:12px;
-      line-height:1.15;
-    }
-    .hero p{
-      max-width:620px;
-      margin-bottom:10px;
-      opacity:.95;
-      font-size:.98rem;
-    }
-    .hero-actions{
-      margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
+/* ================= SECTIONS ================= */
+section{padding:60px 0}
+section:nth-of-type(even){background:#fff}
+.section-title{text-align:center;font-size:1.5rem;margin-bottom:6px}
+.section-subtitle{text-align:center;color:#6b7280;margin-bottom:24px}
 
-    .hero-card{
-      background:rgba(15,23,42,.9);
-      padding:18px 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.15);
-      box-shadow:0 12px 24px rgba(0,0,0,.35);
-      font-size:.92rem;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:18px;
+  border-radius:16px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 8px 22px rgba(0,0,0,.05);
+}
 
-    /* SECTIONS */
-    section{padding:60px 0}
-    section:nth-of-type(even){background:white}
-    .section-title{text-align:center;font-size:1.4rem;margin-bottom:6px}
-    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:20px}
+/* ================= FOOTER ================= */
+footer{
+  background:#111827;
+  color:#9ca3af;
+  text-align:center;
+  padding:18px;
+  font-size:.85rem;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
-      gap:20px;
-    }
-    .card{
-      background:white;
-      border-radius:16px;
-      padding:18px;
-      border:1px solid #e5e7eb;
-      box-shadow:0 8px 22px rgba(0,0,0,.05);
-      font-size:.92rem;
-    }
-    .card h3{
-      margin-bottom:6px;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
+/* ================= MOBILE ================= */
+@media(max-width:520px){
 
-    /* CTA + CONTACT */
-    .info-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-      gap:30px;
-      align-items:start;
-    }
-    .cta-urgent{
-      background:#111827;
-      color:white;
-      border-radius:18px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 14px 30px rgba(0,0,0,.12);
-      display:grid;
-      gap:10px;
-    }
-    .cta-urgent p{opacity:.95}
-    .contact-box{
-      padding:16px;
-      background:#f9fafb;
-      border-radius:14px;
-      border:1px solid #e5e7eb;
-      font-size:.9rem;
-    }
+  /* header en 2 lignes */
+  .nav{
+    flex-wrap:wrap;
+    gap:8px;
+  }
 
-    /* FOOTER */
-    footer{
-      background:#111827;
-      color:#9ca3af;
-      text-align:center;
-      padding:18px 0;
-      font-size:.85rem;
-    }
+  .logo-area{
+    width:100%;
+  }
 
-    /* ANIMATIONS (IDENTIQUE) */
-    .fade-in,.fade-in-right{opacity:0;transition:.6s ease}
-    .fade-in{transform:translateY(18px)}
-    .fade-in-right{transform:translateX(24px)}
-    .visible{opacity:1;transform:translate(0,0)}
+  .logo{
+    font-size:.9rem;
+  }
 
-    /* TABLET */
-    @media(max-width:768px){
-      .hero-grid{grid-template-columns:1fr}
-      .info-grid{grid-template-columns:1fr}
-    }
+  .nav-center{
+    width:100%;
+    justify-content:flex-start;
+  }
 
-    /* ✅ MOBILE : une ligne + pas de chevauchement */
-    @media(max-width:480px){
-      header{padding:8px 0}
-      .nav{flex-wrap:nowrap;gap:6px}
-      .logo-icon{width:30px;height:30px}
-      .logo{display:none;} /* évite l’écrasement/chevauchement sur iPhone */
-      .nav-right{gap:6px}
-      .btn-primary,.btn-phone{padding:6px 8px;font-size:.72rem}
-      .hero{padding-top:60px}
-      .hero h1{font-size:1.65rem}
-    }
-  </style>
+  /* boutons rouges cachés */
+  .nav-right{
+    display:none;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -260,16 +178,18 @@
 <header>
   <div class="container nav">
 
-    <!-- ✅ logo cliquable = retour en haut -->
-    <a href="#top" class="logo-area" aria-label="Retour en haut">
-      <img src="logo-depannage.png" class="logo-icon" alt="Logo Rapid Dépannage Auto">
-      <span class="logo">RAPID DÉPANNAGE AUTO</span>
-    </a>
+    <div class="logo-area">
+      <img src="logo-depannage.png" class="logo-icon" alt="Rapid Dépannage Auto">
+      <a href="#top" class="logo">RAPID DÉPANNAGE AUTO</a>
+    </div>
+
+    <nav class="nav-center">
+      <a href="index.html" class="nav-link">Pare-brise</a>
+      <a href="depannage.html" class="nav-link active">Dépannage</a>
+    </nav>
 
     <div class="nav-right">
-      <!-- ✅ téléphone campagne dépannage -->
       <a href="tel:0644661878" class="btn-phone">📞 Appeler</a>
-      <!-- ✅ bouton RDV renvoie vers la page pare-brise -->
       <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
     </div>
 
@@ -278,138 +198,46 @@
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <div class="container hero-grid">
-
-      <div>
-        <div class="hero-offer">
-          <span>24/7</span>
-          Dépannage & assistance rapide
-        </div>
-
-        <h1>Dépannage & assistance auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
-
-        <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
-        <p>Appelez-nous et décrivez la situation (type de véhicule, panne, localisation). Nous vous confirmons la prise en charge et le délai.</p>
-
-        <div class="hero-actions">
-          <a href="tel:0644661878" class="btn-phone">📞 Appeler maintenant</a>
-          <a href="#services" class="btn-outline">🔧 Voir les services</a>
-        </div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Dépannage & assistance auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
+      <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
+      <p>Appelez-nous et décrivez la situation (panne, véhicule, localisation).</p>
+      <div class="hero-actions">
+        <a href="tel:0644661878" class="btn-phone">📞 Appeler maintenant</a>
       </div>
-
-      <aside class="hero-card fade-in-right">
-        <h2>Zone d’intervention</h2>
-        <p><strong>Île-de-France & alentours</strong></p>
-        <p>Auto • Moto • Poids lourds</p>
-        <p style="font-size:0.82rem; opacity:0.85; margin-top:6px;">
-          Intervention immédiate selon disponibilité et distance.
-        </p>
-      </aside>
-
     </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container fade-in">
-      <h2 class="section-title">Nos services de dépannage</h2>
-      <p class="section-subtitle">Assistance & intervention rapide</p>
-
-      <div class="cards">
-        <div class="card fade-in">
-          <h3>🚗 Dépannage & assistance auto</h3>
-          <p>Assistance en cas de panne, véhicule immobilisé, démarrage impossible. Intervention rapide selon la zone.</p>
-        </div>
-
-        <div class="card fade-in">
-          <h3>🏍️ Assistance moto</h3>
-          <p>Assistance moto, batterie à plat, transport sécurisé selon la situation et la distance.</p>
-        </div>
-
-        <div class="card fade-in">
-          <h3>🚛 Assistance poids lourds</h3>
-          <p>Interventions adaptées : sécurisation, assistance et organisation du remorquage si nécessaire.</p>
-        </div>
-
-        <div class="card fade-in">
-          <h3>🛞 Changement de pneu</h3>
-          <p>Assistance sur place pour pneu crevé / remplacement, selon disponibilité et sécurité d’intervention.</p>
-        </div>
-
-        <div class="card fade-in">
-          <h3>🔋 Booster batterie</h3>
-          <p>Démarrage / booster batterie en cas de batterie à plat.</p>
-        </div>
-
-        <div class="card fade-in">
-          <h3>🧰 Assistance & remorquage</h3>
-          <p>Diagnostic rapide et orientation : assistance sur place ou remorquage selon l’état du véhicule.</p>
-        </div>
-      </div>
-
+    <div class="hero-box">
+      <strong>Zone d’intervention</strong>
+      <p>Île-de-France & alentours</p>
+      <p>Auto • Moto • Poids lourds</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA + CONTACT -->
-  <section>
-    <div class="container info-grid fade-in">
+<section>
+  <div class="container">
+    <h2 class="section-title">Nos services</h2>
+    <p class="section-subtitle">Dépannage & assistance</p>
 
-      <div class="cta-urgent">
-        <h2 style="font-size:1.2rem;">🚨 Besoin d’une assistance en urgence ?</h2>
-        <p>Appelez-nous et décrivez la situation (type de véhicule, panne, localisation). Nous vous confirmons la prise en charge et le délai.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <a href="tel:0644661878" class="btn-phone">📞 Appel immédiat</a>
-          <a href="index.html#contact" class="btn-outline">📅 RDV Pare-brise</a>
-        </div>
-      </div>
-
-      <div class="contact-box fade-in-right">
-        <p><strong>Contact rapide :</strong></p>
-        <p>📞 <a href="tel:0644661878">06 44 66 18 78</a></p>
-        <p>Email : <a href="mailto:rapidautoplus@gmail.com">rapidautoplus@gmail.com</a></p>
-        <p style="margin-top:10px; font-size:0.85rem; color:#6b7280;">
-          Conseil : indiquez votre localisation précise et le type de panne pour un traitement plus rapide.
-        </p>
-      </div>
-
+    <div class="cards">
+      <div class="card">🚗 <strong>Assistance auto</strong><br>Panne, immobilisation</div>
+      <div class="card">🏍️ <strong>Assistance moto</strong><br>Transport sécurisé</div>
+      <div class="card">🚛 <strong>Poids lourds</strong><br>Assistance & sécurisation</div>
+      <div class="card">🛞 <strong>Pneu crevé</strong><br>Remplacement</div>
+      <div class="card">🔋 <strong>Batterie</strong><br>Booster</div>
+      <div class="card">🧰 <strong>Remorquage</strong><br>Selon diagnostic</div>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer>
-  © Rapid Dépannage Auto — Versailles — 24h/24 • 7j/7
+© Rapid Dépannage Auto — 24h/24 • 7j/7 — Versailles
 </footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // ✅ Animations identiques à la page pare-brise
-    document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
-      const obs = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-          el.classList.add("visible");
-          obs.disconnect();
-        }
-      }, { threshold: 0.2 });
-      obs.observe(el);
-    });
-
-    // ✅ Conversion Google Ads sur clic "tel:"
-    document.querySelectorAll('a[href^="tel"]').forEach(el=>{
-      el.addEventListener("click",()=>{
-        if(typeof gtag==="function"){
-          gtag('event','conversion',{
-            'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
-            'value':1,
-            'currency':'EUR'
-          });
-        }
-      });
-    });
-  });
-</script>
 
 </body>
 </html>
