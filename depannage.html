@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rapid Dépannage Auto – Urgence 24h/24 & 7j/7</title>
 
-  <!-- ✅ FAVICONS / LOGOS (à la racine du repo) -->
+  <!-- ✅ FAVICONS / LOGOS -->
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,7 +13,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#111827">
 
-  <!-- ✅ GOOGLE ADS TAG -->
+  <!-- ✅ GOOGLE ADS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17799257107"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,12 +23,13 @@
   </script>
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-    body { background:#f3f4f6; color:#111827; line-height:1.6; }
-    a { color:inherit; text-decoration:none; }
-    .container { max-width:1100px; margin:0 auto; padding:0 16px; }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:#f3f4f6;color:#111827;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-    /* ===== HEADER (MÊME STYLE QUE L'AUTRE PAGE) ===== */
+    /* ===== HEADER (STABLE PC + MOBILE 1 LIGNE) ===== */
     header{
       background:#111827;
       color:#fff;
@@ -38,56 +39,50 @@
       z-index:100;
     }
 
+    /* ✅ Grid 3 colonnes => le centre ne bouge plus entre pages */
     .nav{
-      display:flex;
+      display:grid;
+      grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
       align-items:center;
-      justify-content:space-between;
       gap:12px;
       width:100%;
-      flex-wrap:nowrap;            /* ✅ une seule ligne */
     }
 
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex:0 0 auto;
-      min-width:0;
-    }
-
-    /* ✅ Logo + clic pour remonter en haut */
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
+      justify-self:start;
       min-width:0;
+      cursor:pointer;
     }
 
+    /* ✅ Logo + texte (PC) */
     .logo-icon{
-      height:44px;                /* ✅ plus grand */
+      height:46px;
       width:auto;
       object-fit:contain;
       display:block;
+      flex:0 0 auto;
     }
 
     .logo-text{
       font-weight:800;
       letter-spacing:.06em;
-      font-size:.95rem;
+      font-size:1rem;
       text-transform:uppercase;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      max-width:220px;
+      max-width:320px;
     }
 
     .nav-center{
+      justify-self:center;            /* ✅ centre exact */
       display:flex;
       align-items:center;
-      justify-content:center;
       gap:10px;
-      flex:1 1 auto;              /* ✅ centre naturellement */
-      min-width:0;
+      white-space:nowrap;
     }
 
     .nav-link{
@@ -100,23 +95,25 @@
       white-space:nowrap;
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:6px;
+      box-sizing:border-box;
     }
-    .nav-link:hover{ background:rgba(255,255,255,.12); }
+    .nav-link:hover{background:rgba(255,255,255,.12)}
     .nav-link.active{
       background:rgba(255,255,255,.18);
       border-color:#fff;
     }
 
     .nav-right{
+      justify-self:end;
       display:flex;
       align-items:center;
       gap:10px;
-      flex:0 0 auto;
       white-space:nowrap;
     }
 
-    .btn-phone, .btn-primary{
+    .btn-phone,.btn-primary{
       background:#ef4444;
       color:#fff;
       padding:9px 14px;
@@ -131,7 +128,7 @@
       gap:8px;
       white-space:nowrap;
     }
-    .btn-phone:hover, .btn-primary:hover{ background:#dc2626; transform:translateY(-1px); }
+    .btn-phone:hover,.btn-primary:hover{background:#dc2626;transform:translateY(-1px)}
 
     .btn-outline{
       border-radius:999px;
@@ -148,12 +145,22 @@
       gap:8px;
       white-space:nowrap;
     }
-    .btn-outline:hover{ background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.65); }
+    .btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.65)}
+
+    /* ✅ MOBILE : header un peu plus grand + lisible + pas de boutons rouges */
+    @media (max-width: 480px){
+      header{padding:14px 0;}          /* ✅ plus “respirant” */
+      .logo-icon{height:42px;}        /* ✅ logo plus visible */
+      .logo-text{font-size:.95rem; max-width:160px;}  /* ✅ texte plus lisible */
+      .nav-right{display:none;}       /* ✅ enlève les boutons rouges sur mobile */
+      .nav-center{gap:6px;}
+      .nav-link{padding:6px 10px; font-size:.72rem;}
+    }
 
     /* ===== HERO ===== */
     .hero{
       padding:80px 0;
-      background:linear-gradient(135deg, rgba(15,23,42,.86), rgba(239,68,68,.35));
+      background:linear-gradient(135deg,rgba(15,23,42,.86),rgba(239,68,68,.35));
       color:#fff;
     }
     .hero-grid{
@@ -176,9 +183,7 @@
       box-shadow:0 10px 25px rgba(0,0,0,.18);
     }
     .pill span{
-      width:9px;
-      height:9px;
-      border-radius:50%;
+      width:9px;height:9px;border-radius:50%;
       background:#facc15;
       box-shadow:0 0 0 6px rgba(250,204,21,.18);
     }
@@ -188,12 +193,7 @@
       line-height:1.15;
       margin-bottom:14px;
     }
-
-    .hero p{
-      opacity:.96;
-      margin-bottom:10px;
-      font-size:.98rem;
-    }
+    .hero p{opacity:.96;margin-bottom:10px;font-size:.98rem}
 
     .hero-actions{
       margin-top:18px;
@@ -211,27 +211,17 @@
       font-size:.95rem;
       box-shadow:0 14px 30px rgba(0,0,0,.18);
     }
-    .hero-box p{ margin-top:10px; opacity:.95; }
 
     /* ===== SECTIONS ===== */
-    section{ padding:70px 0; }
-    section:nth-of-type(even){ background:#fff; }
+    section{padding:70px 0}
+    section:nth-of-type(even){background:#fff}
 
-    .section-title{
-      text-align:center;
-      font-size:1.6rem;
-      margin-bottom:6px;
-      color:#111827;
-    }
-    .section-subtitle{
-      text-align:center;
-      color:#6b7280;
-      margin-bottom:30px;
-    }
+    .section-title{text-align:center;font-size:1.6rem;margin-bottom:6px}
+    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:30px}
 
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
       gap:22px;
     }
     .card{
@@ -242,21 +232,19 @@
       box-shadow:0 10px 30px rgba(0,0,0,.06);
       font-size:.95rem;
     }
-    .card h3{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:8px;
-      font-size:1.05rem;
-    }
-    .card p{ color:#374151; }
+    .card h3{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:1.05rem}
+    .card p{color:#374151}
 
-    /* ===== URGENCE / CONTACT ===== */
+    /* ===== URGENCE + CONTACT (empilé sur mobile) ===== */
     .info-grid{
       display:grid;
       grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
       gap:30px;
       align-items:start;
+    }
+    @media (max-width:768px){
+      .hero-grid{grid-template-columns:1fr;}
+      .info-grid{grid-template-columns:1fr;}  /* ✅ FIX mobile/tablette */
     }
 
     .cta{
@@ -267,8 +255,8 @@
       box-shadow:0 14px 30px rgba(0,0,0,.12);
       border:1px solid rgba(255,255,255,.12);
     }
-    .cta h2{ font-size:1.25rem; margin-bottom:10px; }
-    .cta p{ opacity:.95; }
+    .cta h2{font-size:1.25rem;margin-bottom:10px}
+    .cta p{opacity:.95}
     .cta-actions{
       margin-top:16px;
       display:flex;
@@ -285,11 +273,10 @@
       font-size:.95rem;
       box-shadow:0 10px 30px rgba(0,0,0,.05);
     }
-    .contact-box strong{ display:block; margin-bottom:10px; }
-    .contact-box p{ margin:8px 0; }
-    .contact-box a{ text-decoration:underline; }
+    .contact-box strong{display:block;margin-bottom:10px}
+    .contact-box p{margin:8px 0}
+    .contact-box a{text-decoration:underline}
 
-    /* ===== FOOTER ===== */
     footer{
       background:#111827;
       color:#9ca3af;
@@ -298,80 +285,41 @@
       font-size:.85rem;
     }
 
-    /* ===== ANIMATIONS (comme la 1ère page) ===== */
-    .fade-in, .fade-in-right{ opacity:0; transition:.6s ease; }
-    .fade-in{ transform:translateY(18px); }
-    .fade-in-right{ transform:translateX(24px); }
-    .visible{ opacity:1; transform:translate(0,0); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px){
-      .hero-grid{ grid-template-columns:1fr; }
-      .info-grid{ grid-template-columns:1fr; }
-      .logo-text{ max-width:160px; }
-    }
-
-    /* ✅ MOBILE : 1 seule ligne dans le header + on enlève les boutons rouges */
-    @media (max-width: 480px){
-      header{ padding:8px 0; }
-
-      .logo-icon{ height:34px; }      /* ✅ logo visible */
-      .logo-text{
-        font-size:.85rem;
-        max-width:120px;
-      }
-
-      .nav{ gap:8px; }
-
-      .nav-center{
-        gap:8px;
-        justify-content:center;
-      }
-
-      .nav-link{
-        padding:6px 10px;
-        font-size:.72rem;
-      }
-
-      /* ✅ enlève les boutons rouges sur mobile (comme tu veux) */
-      .nav-right{ display:none; }
-    }
+    /* ===== ANIMATIONS (comme page 1) ===== */
+    .fade-in,.fade-in-right{opacity:0;transition:.6s ease}
+    .fade-in{transform:translateY(18px)}
+    .fade-in-right{transform:translateX(24px)}
+    .visible{opacity:1;transform:translate(0,0)}
   </style>
 </head>
 
 <body>
+  <main id="top"></main>
 
-<header>
-  <div class="container nav">
-
-    <!-- ✅ Clique sur le logo/texte = retour en haut -->
-    <div class="logo-area">
+  <header>
+    <div class="container nav">
+      <!-- ✅ retour en haut -->
       <a href="#top" class="brand" aria-label="Retour en haut">
         <img src="logo-depannage.png" alt="Logo Rapid Dépannage Auto" class="logo-icon">
         <div class="logo-text">RAPID DÉPANNAGE AUTO</div>
       </a>
+
+      <nav class="nav-center" aria-label="Navigation">
+        <a href="index.html" class="nav-link">Pare-brise</a>
+        <a href="depannage.html" class="nav-link active">Dépannage</a>
+      </nav>
+
+      <!-- ✅ visible PC seulement (mobile caché via CSS) -->
+      <div class="nav-right">
+        <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
+        <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
+      </div>
     </div>
-
-    <nav class="nav-center" aria-label="Navigation">
-      <a href="index.html" class="nav-link">Pare-brise</a>
-      <a href="depannage.html" class="nav-link active">Dépannage</a>
-    </nav>
-
-    <!-- ✅ Desktop/Tablet : mêmes boutons que l'autre page -->
-    <div class="nav-right">
-      <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
-      <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
-    </div>
-
-  </div>
-</header>
-
-<main id="top">
+  </header>
 
   <!-- HERO -->
   <section class="hero fade-in">
     <div class="container hero-grid">
-
       <div>
         <div class="pill"><span></span>DÉPANNAGE EN URGENCE</div>
 
@@ -389,11 +337,10 @@
       <aside class="hero-box fade-in-right">
         <strong>Zone d’intervention</strong>
         <p><strong>Île-de-France &amp; alentours</strong><br>Selon distance et disponibilité.</p>
-        <p style="font-size:.88rem;opacity:.9">
+        <p style="font-size:.88rem;opacity:.9;margin-top:10px">
           En cas de danger immédiat sur la route, mettez-vous en sécurité et appelez les services d’urgence.
         </p>
       </aside>
-
     </div>
   </section>
 
@@ -440,7 +387,6 @@
   <!-- URGENCE + CONTACT -->
   <section>
     <div class="container info-grid fade-in">
-
       <div class="cta fade-in">
         <h2>🚨 Besoin d’un dépannage en urgence ?</h2>
         <p>Appelez-nous et décrivez la situation (type de véhicule, panne, localisation). Nous vous confirmons la prise en charge et le délai.</p>
@@ -455,49 +401,44 @@
         <strong>Contact rapide</strong>
         <p>📞 <a href="tel:0757823868">07 57 82 38 68</a></p>
         <p>Email : <a href="mailto:rapidautoplus@gmail.com">rapidautoplus@gmail.com</a></p>
-        <p style="margin-top:10px; font-size:.9rem; color:#6b7280;">
+        <p style="margin-top:10px;font-size:.9rem;color:#6b7280">
           Conseil : indiquez votre localisation précise et le type de panne pour un traitement plus rapide.
         </p>
       </div>
-
     </div>
   </section>
 
-</main>
+  <footer>
+    © Rapid Dépannage Auto — Versailles — 24h/24 • 7j/7
+  </footer>
 
-<footer>
-  © Rapid Dépannage Auto — Versailles — 24h/24 • 7j/7
-</footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Animations
+      document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
+        const obs = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+            el.classList.add("visible");
+            obs.disconnect();
+          }
+        }, { threshold: 0.2 });
+        obs.observe(el);
+      });
 
-<script>
-  // ✅ Animations (comme la 1ère page)
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
-      const obs = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-          el.classList.add("visible");
-          obs.disconnect();
+      // Conversion Google Ads sur clic tel:
+      function trackCallClick(){
+        if (typeof gtag === "function") {
+          gtag('event','conversion',{
+            'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
+            'value':1.0,
+            'currency':'EUR'
+          });
         }
-      }, { threshold: 0.2 });
-      obs.observe(el);
-    });
-
-    // ✅ Conversion Google Ads sur clic "tel:" (optionnel)
-    function trackCallClick(){
-      if (typeof gtag === "function") {
-        gtag('event','conversion',{
-          'send_to':'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
-          'value':1.0,
-          'currency':'EUR'
-        });
       }
-    }
-
-    document.querySelectorAll('a[href^="tel"]').forEach(a=>{
-      a.addEventListener("click", trackCallClick);
+      document.querySelectorAll('a[href^="tel"]').forEach(a=>{
+        a.addEventListener("click", trackCallClick);
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
