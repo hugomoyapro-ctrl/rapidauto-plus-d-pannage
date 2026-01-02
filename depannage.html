@@ -23,40 +23,14 @@ a{text-decoration:none;color:inherit}
 .container{max-width:1100px;margin:auto;padding:0 16px}
 
 /* ================= HEADER ================= */
-header{
-  background:#111827;
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:50;
-}
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:12px 0;
-}
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.logo-icon{
-  width:44px;
-  height:44px;
-  object-fit:contain;
-}
-.logo{
-  font-weight:800;
-  letter-spacing:.05em;
-  font-size:1rem;
-  white-space:nowrap;
-}
-.nav-center{
-  display:flex;
-  gap:10px;
-}
+header{background:#111827;color:#fff;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+
+.logo-area{display:flex;align-items:center;gap:10px}
+.logo-icon{width:44px;height:44px;object-fit:contain}
+.logo{font-weight:800;letter-spacing:.05em;font-size:1rem;white-space:nowrap}
+
+.nav-center{display:flex;gap:10px}
 .nav-link{
   padding:8px 16px;
   border-radius:999px;
@@ -64,14 +38,9 @@ header{
   font-size:.8rem;
   font-weight:600;
 }
-.nav-link.active{
-  background:rgba(255,255,255,.18);
-  border-color:#fff;
-}
-.nav-right{
-  display:flex;
-  gap:8px;
-}
+.nav-link.active{background:rgba(255,255,255,.18);border-color:#fff}
+
+.nav-right{display:flex;gap:8px}
 .btn-phone,.btn-primary{
   background:#ef4444;
   color:#fff;
@@ -92,20 +61,9 @@ header{
   grid-template-columns:1.5fr 1fr;
   gap:40px;
 }
-.hero h1{
-  font-size:clamp(2rem,3vw,2.5rem);
-  margin-bottom:14px;
-}
-.hero p{
-  margin-bottom:10px;
-  opacity:.95;
-}
-.hero-actions{
-  margin-top:16px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
+.hero h1{font-size:clamp(2rem,3vw,2.5rem);margin-bottom:14px}
+.hero p{margin-bottom:10px;opacity:.95}
+.hero-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 .hero-box{
   background:rgba(15,23,42,.9);
   padding:20px;
@@ -132,8 +90,24 @@ section:nth-of-type(even){background:#fff}
   box-shadow:0 10px 30px rgba(0,0,0,.06);
   font-size:.95rem;
 }
-.card h3{
-  margin-bottom:8px;
+
+/* ================= BLOCS BAS ================= */
+.info-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:30px;
+}
+.cta-urgent{
+  background:#111827;
+  color:#fff;
+  padding:24px;
+  border-radius:20px;
+}
+.contact-box{
+  background:#f9fafb;
+  padding:22px;
+  border-radius:18px;
+  border:1px solid #e5e7eb;
 }
 
 /* ================= FOOTER ================= */
@@ -145,6 +119,12 @@ footer{
   font-size:.85rem;
 }
 
+/* ================= ANIMATIONS ================= */
+.fade-in,.fade-in-right{opacity:0;transition:.6s ease}
+.fade-in{transform:translateY(18px)}
+.fade-in-right{transform:translateX(24px)}
+.visible{opacity:1;transform:translate(0,0)}
+
 /* ================= MOBILE ================= */
 @media(max-width:520px){
   .nav{flex-wrap:wrap;gap:10px}
@@ -153,6 +133,7 @@ footer{
   .nav-center{width:100%;justify-content:center}
   .nav-right{display:none}
   .hero-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -180,26 +161,18 @@ footer{
 
 <main id="top">
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero fade-in">
   <div class="container hero-grid">
     <div>
       <h1>Dépannage & assistance auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
 
       <p>
         Rapid Dépannage Auto intervient rapidement pour toute situation de panne,
-        d’immobilisation ou d’incident sur la route. Notre service est disponible
-        24h/24 et 7j/7 afin de vous assister au plus vite.
+        d’immobilisation ou d’incident sur la route.
       </p>
-
       <p>
-        Nous prenons en charge les véhicules légers, motos et poids lourds,
-        avec des solutions adaptées à chaque situation : assistance sur place,
-        dépannage immédiat ou organisation du remorquage si nécessaire.
-      </p>
-
-      <p>
-        ✅ Toutes assurances acceptées • ⚡ Intervention rapide • 📍 Départ Versailles
+        Nous prenons en charge véhicules légers, motos et poids lourds,
+        avec assistance sur place ou remorquage si nécessaire.
       </p>
 
       <div class="hero-actions">
@@ -207,81 +180,42 @@ footer{
       </div>
     </div>
 
-    <div class="hero-box">
+    <div class="hero-box fade-in-right">
       <strong>Zone d’intervention</strong>
-      <p>
-        Intervention en Île-de-France et zones limitrophes,
-        selon la distance et la disponibilité des équipes.
-      </p>
-      <p>
-        Assistance auto • moto • poids lourds,
-        de jour comme de nuit, week-ends et jours fériés inclus.
-      </p>
+      <p>Île-de-France & zones limitrophes</p>
+      <p>Intervention immédiate selon disponibilité</p>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section>
+<section class="fade-in">
   <div class="container">
     <h2 class="section-title">Nos services de dépannage</h2>
-    <p class="section-subtitle">Assistance rapide et solutions adaptées à chaque situation</p>
+    <p class="section-subtitle">Assistance rapide et solutions adaptées</p>
 
     <div class="cards">
+      <div class="card fade-in"><strong>🚗 Assistance auto</strong><br>Panne, immobilisation, remorquage</div>
+      <div class="card fade-in"><strong>🏍️ Assistance moto</strong><br>Transport sécurisé</div>
+      <div class="card fade-in"><strong>🚛 Assistance poids lourds</strong><br>Sécurisation & dépannage</div>
+      <div class="card fade-in"><strong>🛞 Pneu crevé</strong><br>Remplacement / assistance</div>
+      <div class="card fade-in"><strong>🔋 Batterie</strong><br>Booster / redémarrage</div>
+      <div class="card fade-in"><strong>🧰 Remorquage</strong><br>Selon diagnostic</div>
+    </div>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>🚗 Dépannage & assistance auto</h3>
-        <p>
-          Assistance en cas de panne, de véhicule immobilisé ou de démarrage impossible.
-          Nous intervenons directement sur place lorsque cela est possible,
-          ou organisons le remorquage vers un garage adapté.
-        </p>
-      </div>
+<section class="fade-in">
+  <div class="container info-grid">
+    <div class="cta-urgent">
+      <h2>🚨 Besoin d’une assistance immédiate ?</h2>
+      <p>Appelez-nous et indiquez votre localisation et le type de panne.</p>
+      <a href="tel:0644661878" class="btn-phone">📞 Appel immédiat</a>
+    </div>
 
-      <div class="card">
-        <h3>🏍️ Assistance moto</h3>
-        <p>
-          Dépannage moto en cas de panne mécanique, batterie déchargée
-          ou incident sur la route. Transport sécurisé du deux-roues
-          selon la situation.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🚛 Assistance poids lourds</h3>
-        <p>
-          Prise en charge des poids lourds et utilitaires :
-          sécurisation de la zone, assistance technique
-          et coordination du remorquage si nécessaire.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🛞 Changement de pneu</h3>
-        <p>
-          Intervention sur pneu crevé ou endommagé,
-          remplacement ou assistance sur place lorsque les conditions
-          de sécurité le permettent.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🔋 Batterie à plat / booster</h3>
-        <p>
-          Démarrage immédiat du véhicule en cas de batterie déchargée,
-          contrôle rapide et remise en route pour vous permettre
-          de reprendre la route rapidement.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🧰 Assistance & remorquage</h3>
-        <p>
-          Diagnostic rapide de la situation et orientation vers la meilleure solution :
-          assistance sur place ou remorquage vers le garage le plus adapté.
-        </p>
-      </div>
-
+    <div class="contact-box fade-in-right">
+      <strong>Contact rapide</strong>
+      <p>📞 06 44 66 18 78</p>
+      <p>Email : rapidautoplus@gmail.com</p>
     </div>
   </div>
 </section>
@@ -289,8 +223,22 @@ footer{
 </main>
 
 <footer>
-© Rapid Dépannage Auto — Dépannage & assistance 24h/24 • 7j/7 — Versailles
+© Rapid Dépannage Auto — 24h/24 • 7j/7 — Versailles
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll(".fade-in,.fade-in-right").forEach(el=>{
+    const obs=new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting){
+        el.classList.add("visible");
+        obs.disconnect();
+      }
+    },{threshold:.2});
+    obs.observe(el);
+  });
+});
+</script>
 
 </body>
 </html>
