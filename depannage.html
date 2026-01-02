@@ -35,34 +35,30 @@ header{
   align-items:center;
   justify-content:space-between;
   gap:12px;
-  padding:10px 0;
+  padding:12px 0;
 }
-
-/* logo */
 .logo-area{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:10px;
 }
 .logo-icon{
-  width:34px;
-  height:34px;
+  width:44px;
+  height:44px;
   object-fit:contain;
 }
 .logo{
   font-weight:800;
   letter-spacing:.05em;
-  font-size:.95rem;
+  font-size:1rem;
   white-space:nowrap;
 }
-
-/* nav pages */
 .nav-center{
   display:flex;
-  gap:8px;
+  gap:10px;
 }
 .nav-link{
-  padding:8px 14px;
+  padding:8px 16px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.4);
   font-size:.8rem;
@@ -72,8 +68,6 @@ header{
   background:rgba(255,255,255,.18);
   border-color:#fff;
 }
-
-/* boutons PC */
 .nav-right{
   display:flex;
   gap:8px;
@@ -100,34 +94,46 @@ header{
 }
 .hero h1{
   font-size:clamp(2rem,3vw,2.5rem);
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
-.hero p{margin-bottom:10px;opacity:.95}
-.hero-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.hero p{
+  margin-bottom:10px;
+  opacity:.95;
+}
+.hero-actions{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
 .hero-box{
   background:rgba(15,23,42,.9);
-  padding:18px;
+  padding:20px;
   border-radius:16px;
-  font-size:.9rem;
+  font-size:.95rem;
 }
 
 /* ================= SECTIONS ================= */
 section{padding:60px 0}
 section:nth-of-type(even){background:#fff}
 .section-title{text-align:center;font-size:1.5rem;margin-bottom:6px}
-.section-subtitle{text-align:center;color:#6b7280;margin-bottom:24px}
+.section-subtitle{text-align:center;color:#6b7280;margin-bottom:26px}
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
 }
 .card{
   background:#fff;
-  padding:18px;
-  border-radius:16px;
+  padding:22px;
+  border-radius:18px;
   border:1px solid #e5e7eb;
-  box-shadow:0 8px 22px rgba(0,0,0,.05);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  font-size:.95rem;
+}
+.card h3{
+  margin-bottom:8px;
 }
 
 /* ================= FOOTER ================= */
@@ -141,34 +147,12 @@ footer{
 
 /* ================= MOBILE ================= */
 @media(max-width:520px){
-
-  /* header en 2 lignes */
-  .nav{
-    flex-wrap:wrap;
-    gap:8px;
-  }
-
-  .logo-area{
-    width:100%;
-  }
-
-  .logo{
-    font-size:.9rem;
-  }
-
-  .nav-center{
-    width:100%;
-    justify-content:flex-start;
-  }
-
-  /* boutons rouges cachés */
-  .nav-right{
-    display:none;
-  }
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
+  .nav{flex-wrap:wrap;gap:10px}
+  .logo-area{width:100%}
+  .logo-icon{width:52px;height:52px}
+  .nav-center{width:100%;justify-content:center}
+  .nav-right{display:none}
+  .hero-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -177,7 +161,6 @@ footer{
 
 <header>
   <div class="container nav">
-
     <div class="logo-area">
       <img src="logo-depannage.png" class="logo-icon" alt="Rapid Dépannage Auto">
       <a href="#top" class="logo">RAPID DÉPANNAGE AUTO</a>
@@ -192,18 +175,33 @@ footer{
       <a href="tel:0644661878" class="btn-phone">📞 Appeler</a>
       <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
     </div>
-
   </div>
 </header>
 
 <main id="top">
 
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
       <h1>Dépannage & assistance auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
-      <p>✅ Toutes assurances • ⚡ Intervention rapide • 📍 Départ Versailles</p>
-      <p>Appelez-nous et décrivez la situation (panne, véhicule, localisation).</p>
+
+      <p>
+        Rapid Dépannage Auto intervient rapidement pour toute situation de panne,
+        d’immobilisation ou d’incident sur la route. Notre service est disponible
+        24h/24 et 7j/7 afin de vous assister au plus vite.
+      </p>
+
+      <p>
+        Nous prenons en charge les véhicules légers, motos et poids lourds,
+        avec des solutions adaptées à chaque situation : assistance sur place,
+        dépannage immédiat ou organisation du remorquage si nécessaire.
+      </p>
+
+      <p>
+        ✅ Toutes assurances acceptées • ⚡ Intervention rapide • 📍 Départ Versailles
+      </p>
+
       <div class="hero-actions">
         <a href="tel:0644661878" class="btn-phone">📞 Appeler maintenant</a>
       </div>
@@ -211,24 +209,79 @@ footer{
 
     <div class="hero-box">
       <strong>Zone d’intervention</strong>
-      <p>Île-de-France & alentours</p>
-      <p>Auto • Moto • Poids lourds</p>
+      <p>
+        Intervention en Île-de-France et zones limitrophes,
+        selon la distance et la disponibilité des équipes.
+      </p>
+      <p>
+        Assistance auto • moto • poids lourds,
+        de jour comme de nuit, week-ends et jours fériés inclus.
+      </p>
     </div>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section>
   <div class="container">
-    <h2 class="section-title">Nos services</h2>
-    <p class="section-subtitle">Dépannage & assistance</p>
+    <h2 class="section-title">Nos services de dépannage</h2>
+    <p class="section-subtitle">Assistance rapide et solutions adaptées à chaque situation</p>
 
     <div class="cards">
-      <div class="card">🚗 <strong>Assistance auto</strong><br>Panne, immobilisation</div>
-      <div class="card">🏍️ <strong>Assistance moto</strong><br>Transport sécurisé</div>
-      <div class="card">🚛 <strong>Poids lourds</strong><br>Assistance & sécurisation</div>
-      <div class="card">🛞 <strong>Pneu crevé</strong><br>Remplacement</div>
-      <div class="card">🔋 <strong>Batterie</strong><br>Booster</div>
-      <div class="card">🧰 <strong>Remorquage</strong><br>Selon diagnostic</div>
+
+      <div class="card">
+        <h3>🚗 Dépannage & assistance auto</h3>
+        <p>
+          Assistance en cas de panne, de véhicule immobilisé ou de démarrage impossible.
+          Nous intervenons directement sur place lorsque cela est possible,
+          ou organisons le remorquage vers un garage adapté.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🏍️ Assistance moto</h3>
+        <p>
+          Dépannage moto en cas de panne mécanique, batterie déchargée
+          ou incident sur la route. Transport sécurisé du deux-roues
+          selon la situation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🚛 Assistance poids lourds</h3>
+        <p>
+          Prise en charge des poids lourds et utilitaires :
+          sécurisation de la zone, assistance technique
+          et coordination du remorquage si nécessaire.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🛞 Changement de pneu</h3>
+        <p>
+          Intervention sur pneu crevé ou endommagé,
+          remplacement ou assistance sur place lorsque les conditions
+          de sécurité le permettent.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔋 Batterie à plat / booster</h3>
+        <p>
+          Démarrage immédiat du véhicule en cas de batterie déchargée,
+          contrôle rapide et remise en route pour vous permettre
+          de reprendre la route rapidement.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🧰 Assistance & remorquage</h3>
+        <p>
+          Diagnostic rapide de la situation et orientation vers la meilleure solution :
+          assistance sur place ou remorquage vers le garage le plus adapté.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -236,7 +289,7 @@ footer{
 </main>
 
 <footer>
-© Rapid Dépannage Auto — 24h/24 • 7j/7 — Versailles
+© Rapid Dépannage Auto — Dépannage & assistance 24h/24 • 7j/7 — Versailles
 </footer>
 
 </body>
