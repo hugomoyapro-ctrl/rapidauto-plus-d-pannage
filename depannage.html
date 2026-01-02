@@ -33,7 +33,7 @@
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-    /* ===================== HEADER (même base que page 1) ===================== */
+    /* ===================== HEADER (IDENTIQUE À PAGE 1) ===================== */
     header{
       background:#111827;
       color:#fff;
@@ -68,12 +68,9 @@
       letter-spacing:.05em;
       text-transform:uppercase;
       white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width:100%;
     }
 
-    /* NAV CENTER (boutons) */
+    /* ✅ NAV CENTER (2 pages) */
     .nav-center{
       display:flex;
       align-items:center;
@@ -82,25 +79,29 @@
       white-space:nowrap;
     }
     .nav-link{
-      border-radius:999px;
-      padding:8px 12px;
-      border:1px solid #ffffff55;
-      color:#f9fafb;
-      background:transparent;
-      font-size:.8rem;
-      font-weight:500;
-      cursor:pointer;
-      transition:.2s;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
+      border-radius: 999px;
+      padding: 8px 14px;          /* ✅ même taille que page 1 */
+      border: 1px solid #ffffff55;
+      color: #f9fafb;
+      background: transparent;
+      font-size: 0.8rem;          /* ✅ même taille que page 1 */
+      font-weight: 600;           /* ✅ même épaisseur */
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      line-height: 1;             /* ✅ évite les différences de hauteur */
     }
-    .nav-link:hover{background:#ffffff11;border-color:#ffffffaa}
+    .nav-link:hover {
+      background: #ffffff11;
+      border-color: #ffffffaa;
+    }
     .nav-link.active{
-      background:#ffffff18;
-      border-color:#ffffffcc;
-      font-weight:600;
+      background: #ffffff18;
+      border-color: #ffffffcc;
+      font-weight: 600;
     }
 
     .nav-right{
@@ -293,21 +294,48 @@
       .info-grid{grid-template-columns:1fr}
     }
 
-    /* MOBILE */
+    /* ✅ MOBILE HEADER (même logique que page 1 : 3 lignes propres) */
     @media (max-width:480px){
       header{padding:8px 0}
-      .nav{flex-wrap:wrap;gap:6px}
-      .logo{font-size:.9rem}
-      .logo-icon{width:26px;height:26px}
 
-      /* on garde l’affichage propre */
-      .nav-center{width:100%;justify-content:center}
-      .nav-right{width:100%;justify-content:center}
+      .nav{
+        flex-wrap:wrap;
+        gap:8px;
+      }
 
-      .btn-primary,.btn-phone,.nav-link{
+      /* ligne 1 : logo + texte à gauche */
+      .logo-area{
+        width:100%;
+        justify-content:flex-start;
+        min-width:0;
+      }
+
+      .logo{
+        white-space:normal; /* ✅ pas coupé */
+        line-height:1.1;
+      }
+
+      .logo-icon{
+        width:26px;
+        height:26px;
+      }
+
+      /* ligne 2 : nav center centré */
+      .nav-center{
+        width:100%;
+        justify-content:center;
+      }
+
+      /* ligne 3 : boutons rouges centrés */
+      .nav-right{
+        width:100%;
+        justify-content:center;
+        gap:10px;
+      }
+
+      .btn-primary,.btn-phone{
         padding:6px 8px;
         font-size:.72rem;
-        white-space:nowrap;
       }
 
       .hero{padding-top:60px}
@@ -332,7 +360,7 @@
 
     <div class="nav-right">
       <a href="tel:0644661878" class="btn-phone">📞 Appeler</a>
-  </div>
+    </div>
   </div>
 </header>
 
@@ -484,6 +512,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Animations
     document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
       const obs = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) {
@@ -494,7 +523,7 @@
       obs.observe(el);
     });
 
-    // Tracking appel (optionnel)
+    // Tracking appel
     document.querySelectorAll('a[href^="tel"]').forEach(el=>{
       el.addEventListener("click",()=>{
         if(typeof gtag==="function"){
