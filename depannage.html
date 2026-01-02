@@ -48,119 +48,25 @@
     }
 
     /* ===================== HEADER (COPIE STYLE PAGE 1) ===================== */
-    header {
-      background: #111827;
-      color: white;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+<header>
+  <div class="container nav">
+    <div class="logo-area">
+      <img src="logo-rapid-auto.jpg" class="logo-icon" alt="Logo Rapid Auto Plus">
+      <a href="#top" class="logo">RAPID AUTO PLUS</a>
+    </div>
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      width: 100%;
-    }
+    <nav class="nav-center" aria-label="Navigation principale">
+      <a class="nav-link" href="index.html">Pare-brise</a>
+      <a class="nav-link active" href="depannage.html">Dépannage</a>
+    </nav>
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-shrink: 0;
-    }
+    <div class="nav-right">
+      <a href="tel:06XXXXXXXX" class="btn-phone">📞 Appeler</a>
+      <a href="#contact" class="btn-primary">📅 Rendez-vous</a>
+    </div>
+  </div>
+</header>
 
-    .logo-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 6px;
-      object-fit: cover;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-
-    .btn-primary,
-    .btn-phone {
-      background: #ef4444;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: 0.2s;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover,
-    .btn-phone:hover {
-      background: #dc2626;
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      border-radius: 999px;
-      padding: 8px 12px;
-      border: 1px solid #ffffff55;
-      color: #f9fafb;
-      background: transparent;
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-outline:hover {
-      background: #ffffff11;
-      border-color: #ffffffaa;
-    }
-.nav-center{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-shrink:0;
-  white-space:nowrap;
-}
-.nav-link{
-  border-radius:999px;
-  padding:8px 12px;
-  border:1px solid #ffffff55;
-  color:#f9fafb;
-  background:transparent;
-  font-size:0.8rem;
-  font-weight:500;
-  cursor:pointer;
-  transition:0.2s;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  white-space:nowrap;
-}
-.nav-link:hover{background:#ffffff11;border-color:#ffffffaa;}
-.nav-link.active{background:#ffffff18;border-color:#ffffffcc;font-weight:600;}
 
     /* ===================== HERO (PHOTO depannage.jpg) ===================== */
     .hero {
