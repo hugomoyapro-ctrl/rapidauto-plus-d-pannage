@@ -98,18 +98,19 @@
     }
     .nav-link{
       border-radius: 999px;
-      padding: 8px 12px;
+      padding: 8px 14px;         /* ✅ taille identique */
       border: 1px solid #ffffff55;
       color: #f9fafb;
       background: transparent;
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-size: 0.8rem;         /* ✅ taille identique */
+      font-weight: 600;          /* ✅ même épaisseur */
       cursor: pointer;
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       white-space: nowrap;
+      line-height: 1;
     }
     .nav-link:hover {
       background: #ffffff11;
@@ -468,7 +469,7 @@
       }
     }
 
-    /* ✅ MOBILE HEADER : logo+texte à gauche, pas coupé ; boutons au-dessus (header) */
+    /* ✅ MOBILE HEADER : logo+texte à gauche, nav-center centré dessous, boutons centrés dessous */
     @media (max-width: 480px) {
       header {
         padding: 8px 0;
@@ -479,30 +480,30 @@
         gap: 8px;
       }
 
-      /* 1ère ligne : logo + texte à gauche */
+      /* ligne 1 : logo à gauche */
       .logo-area {
         width: 100%;
-        justify-content: flex-start; /* ✅ à gauche */
+        justify-content: flex-start;
         min-width: 0;
       }
 
       .logo {
-        white-space: normal;      /* ✅ jamais coupé */
+        white-space: normal; /* ✅ pas coupé */
         overflow: visible;
         text-overflow: unset;
         max-width: 100%;
         line-height: 1.1;
-        text-align: left;         /* ✅ texte à gauche */
+        text-align: left;
       }
 
-      /* 2ème ligne : nav-center centré */
+      /* ligne 2 : nav center au milieu */
       .nav-center{
         width: 100%;
         justify-content: center;
       }
 
-      /* 3ème ligne : boutons rouge centrés */
-      .nav-right{
+      /* ligne 3 : boutons rouges au milieu */
+      .nav-right {
         width: 100%;
         justify-content: center;
         gap: 10px;
@@ -534,11 +535,11 @@
       <a href="#top" class="logo">RAPID AUTO PLUS</a>
     </div>
 
-    <!-- ✅ Boutons Pare-brise / Dépannage -->
-    <div class="nav-center">
+    <!-- ✅ Boutons au milieu -->
+    <nav class="nav-center" aria-label="Navigation principale">
       <a class="nav-link active" href="index.html">Pare-brise</a>
       <a class="nav-link" href="depannage.html">Dépannage</a>
-    </div>
+    </nav>
 
     <div class="nav-right">
       <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
