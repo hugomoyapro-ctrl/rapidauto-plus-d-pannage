@@ -23,351 +23,274 @@
   </script>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body {
-      background: #f3f4f6;
-      color: #111827;
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{background:#f3f4f6;color:#111827;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
     /* =========================
-       HEADER (mêmes bases que ton index)
+       HEADER (stable + identique)
        ========================= */
-    header {
-      background: #111827;
-      color: white;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
+    header{
+      background:#111827;
+      color:#fff;
+      padding:10px 0;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      width:100%;
+      min-height:44px; /* évite les sauts */
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      width: 100%;
+    /* zones à largeur “stable” pour éviter que ça bouge sur PC */
+    .nav-left{flex:0 0 290px; display:flex; align-items:center;}
+    .nav-center{flex:1 1 auto; display:flex; justify-content:center; align-items:center; gap:10px; min-width:0;}
+    .nav-right{flex:0 0 290px; display:flex; justify-content:flex-end; align-items:center; gap:8px; white-space:nowrap;}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      min-width: 0;
+    /* logo (sans “blanc” forcé) */
+    .logo-icon{
+      height:34px;
+      width:auto;
+      object-fit:contain;
+      display:block;
+      flex:0 0 auto;
     }
 
-    /* logo + visible */
-    .logo-icon {
-      height: 42px;
-      width: auto;
-      object-fit: contain;
-      display: block;
+    .brand-text{
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.95rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:240px;
     }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      white-space: nowrap;
+    .nav-link{
+      border-radius:999px;
+      padding:8px 12px;
+      border:1px solid #ffffff55;
+      color:#f9fafb;
+      background:transparent;
+      font-size:.8rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:.2s;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .nav-link:hover{background:#ffffff11;border-color:#ffffffaa}
+    .nav-link.active{background:#ffffff18;border-color:#ffffffcc}
+
+    .btn-primary,.btn-phone{
+      background:#ef4444;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:700;
+      transition:.2s;
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .btn-primary:hover,.btn-phone:hover{background:#dc2626;transform:translateY(-1px)}
+
+    .btn-outline{
+      border-radius:999px;
+      padding:8px 12px;
+      border:1px solid #ffffff55;
+      color:#f9fafb;
+      background:transparent;
+      font-size:.8rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:.2s;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .btn-outline:hover{background:#ffffff11;border-color:#ffffffaa}
+
+    /* ==============
+       HERO
+       ============== */
+    .hero{
+      padding:70px 0 80px;
+      background:linear-gradient(135deg, rgba(15,23,42,.78), rgba(239,68,68,.28));
+      color:white;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
+      gap:40px;
+      align-items:start;
     }
 
-    /* Centre (boutons pages) */
-    .nav-center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex: 1 1 auto;
-      min-width: 0;
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(239,68,68,.92);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:800;
+      margin-bottom:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+    }
+    .hero-pill span{
+      width:8px;height:8px;border-radius:999px;background:#facc15;
+      box-shadow:0 0 0 5px rgba(250,204,21,.22);
     }
 
-    .nav-link {
-      border-radius: 999px;
-      padding: 8px 12px;
-      border: 1px solid #ffffff55;
-      color: #f9fafb;
-      background: transparent;
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-      flex: 0 0 auto;
+    .hero h1{
+      font-size:clamp(2rem,3.2vw,2.6rem);
+      line-height:1.15;
+      margin-bottom:12px;
+    }
+    .hero p{opacity:.95;margin-bottom:10px;font-size:.98rem;max-width:640px}
+    .hero-actions{
+      margin-top:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    .nav-link:hover {
-      background: #ffffff11;
-      border-color: #ffffffaa;
+    .hero-card{
+      background:rgba(15,23,42,.92);
+      padding:18px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:0 12px 24px rgba(0,0,0,.35);
+      font-size:.95rem;
     }
+    .hero-card h2{font-size:1.05rem;margin-bottom:8px}
 
-    .nav-link.active {
-      background: #ffffff18;
-      border-color: #ffffffcc;
-      font-weight: 650;
-    }
-
-    /* Droite (boutons rouges) */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-
-    .btn-primary,
-    .btn-phone {
-      background: #ef4444;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: 0.2s;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover,
-    .btn-phone:hover {
-      background: #dc2626;
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      border-radius: 999px;
-      padding: 8px 12px;
-      border: 1px solid #ffffff55;
-      color: #f9fafb;
-      background: transparent;
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .btn-outline:hover {
-      background: #ffffff11;
-      border-color: #ffffffaa;
-    }
-
-    /* =========================
-       HERO dépannage
-       ========================= */
-    .hero {
-      padding: 70px 0 80px;
-      background: linear-gradient(135deg, rgba(15,23,42,0.78), rgba(239,68,68,0.25));
-      color: white;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 40px;
-    }
-
-    .pill-urgent {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(239, 68, 68, 0.95);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-      width: fit-content;
-    }
-    .pill-urgent .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #facc15;
-      box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.22);
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 3.3vw, 2.7rem);
-      margin-bottom: 12px;
-      line-height: 1.18;
-    }
-
-    .hero p {
-      max-width: 560px;
-      margin-bottom: 10px;
-      opacity: 0.95;
-      font-size: 0.98rem;
-    }
-
-    .hero-actions {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .hero-card {
-      background: rgba(15, 23, 42, 0.9);
-      padding: 18px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.35);
-      font-size: 0.95rem;
-    }
-
-    /* =========================
+    /* ==============
        SECTIONS
-       ========================= */
-    section { padding: 60px 0; }
-    section:nth-of-type(even) { background: white; }
+       ============== */
+    section{padding:60px 0}
+    section:nth-of-type(even){background:white}
 
-    .section-title {
-      text-align: center;
-      font-size: 1.4rem;
-      margin-bottom: 6px;
+    .section-title{text-align:center;font-size:1.6rem;margin-bottom:6px}
+    .section-subtitle{text-align:center;color:#6b7280;margin-bottom:22px}
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:white;
+      border-radius:16px;
+      padding:18px;
+      border:1px solid #e5e7eb;
+      box-shadow:0 8px 22px rgba(0,0,0,.05);
+      font-size:.95rem;
+    }
+    .card h3{margin-bottom:6px;display:flex;align-items:center;gap:8px}
+
+    /* CTA section */
+    .info-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+      gap:30px;
+      align-items:stretch;
+    }
+    .cta-urgent{
+      background:#111827;
+      color:white;
+      border-radius:18px;
+      padding:20px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 14px 30px rgba(0,0,0,.12);
+      display:grid;
+      gap:10px;
+    }
+    .cta-urgent p{opacity:.95}
+    .contact-box{
+      padding:16px;
+      background:#f9fafb;
+      border-radius:14px;
+      border:1px solid #e5e7eb;
+      font-size:.95rem;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: #6b7280;
-      margin-bottom: 20px;
+    footer{
+      background:#111827;
+      color:#9ca3af;
+      text-align:center;
+      padding:18px 0;
+      font-size:.85rem;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 18px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
-      font-size: 0.95rem;
-    }
-
-    .card h3 {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* CTA + contact */
-    .info-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 30px;
-      align-items: start;
-    }
-
-    .cta-urgent {
-      background: #111827;
-      color: white;
-      border-radius: 18px;
-      padding: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-      display: grid;
-      gap: 10px;
-    }
-
-    .contact-box {
-      padding: 16px;
-      background: #f9fafb;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      font-size: 0.95rem;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #111827;
-      color: #9ca3af;
-      text-align: center;
-      padding: 18px 0;
-      font-size: 0.85rem;
-    }
-
-    /* ANIMATIONS (identiques index) */
-    .fade-in,
-    .fade-in-right {
-      opacity: 0;
-      transition: 0.6s ease;
-    }
-
-    .fade-in { transform: translateY(18px); }
-    .fade-in-right { transform: translateX(24px); }
-
-    .visible { opacity: 1; transform: translate(0,0); }
+    /* ==============
+       ANIMATIONS (comme index)
+       ============== */
+    .fade-in,.fade-in-right{opacity:0;transition:.6s ease}
+    .fade-in{transform:translateY(18px)}
+    .fade-in-right{transform:translateX(24px)}
+    .visible{opacity:1;transform:translate(0,0)}
 
     /* TABLETTE */
-    @media (max-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .info-grid { grid-template-columns: 1fr; }
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr}
+      .info-grid{grid-template-columns:1fr}
+      /* sur tablette, on autorise plus de place au centre */
+      .nav-left,.nav-right{flex:0 0 auto}
+      .nav-center{justify-content:center}
     }
 
-    /* MOBILE: 1 seule ligne + cache boutons rouges */
-    @media (max-width: 480px) {
-      header { padding: 8px 0; }
+    /* MOBILE : 1 ligne + pas de chevauchement + pas de boutons rouges */
+    @media(max-width:520px){
+      header{padding:8px 0}
 
-      /* 1 ligne */
-      .nav {
-        flex-wrap: nowrap;
-        gap: 8px;
+      .nav{
+        flex-wrap:nowrap;
+        gap:10px;
       }
 
-      /* logo un peu plus grand */
-      .logo-icon { height: 44px; }
+      /* le bloc gauche ne doit PAS pousser les boutons */
+      .nav-left{flex:0 0 auto; max-width:46px}
 
-      .logo {
-        font-size: 0.82rem;
-        line-height: 1;
+      /* logo visible */
+      .logo-icon{height:30px}
+
+      /* on cache le texte (c’est lui qui chevauche) */
+      .brand-text{display:none !important}
+
+      /* centre à droite, bien propre */
+      .nav-center{
+        flex:1 1 auto;
+        justify-content:flex-end;
+        gap:8px;
+        min-width:0;
       }
+      .nav-link{padding:7px 10px;font-size:.78rem}
 
-      .nav-center { gap: 6px; }
-      .nav-link { padding: 6px 10px; font-size: 0.72rem; }
-
-      /* pas de boutons rouges sur mobile */
-      .nav-right { display: none; }
-
-      /* garde 1 ligne même si très petit (scroll horizontal) */
-      header { overflow-x: auto; }
-      header::-webkit-scrollbar { display: none; }
-
-      .hero { padding-top: 60px; }
-      .hero h1 { font-size: 1.85rem; }
+      /* on enlève les boutons rouges sur mobile */
+      .nav-right{display:none}
     }
   </style>
 </head>
@@ -376,33 +299,34 @@
 
 <header>
   <div class="container nav">
-
-    <!-- ✅ Retour en haut via clic sur logo+titre -->
-    <a href="#top" class="logo-area" aria-label="Retour en haut">
-      <img src="logo-depannage.png" class="logo-icon" alt="Logo Rapid Dépannage Auto">
-      <span class="logo">RAPID DÉPANNAGE AUTO</span>
-    </a>
+    <!-- ✅ clic = revenir en haut -->
+    <div class="nav-left">
+      <a href="#top" class="brand" aria-label="Revenir en haut">
+        <img src="logo-depannage.png" class="logo-icon" alt="Logo Rapid Dépannage Auto">
+        <span class="brand-text">RAPID DÉPANNAGE AUTO</span>
+      </a>
+    </div>
 
     <nav class="nav-center" aria-label="Navigation principale">
       <a class="nav-link" href="index.html">Pare-brise</a>
       <a class="nav-link active" href="depannage.html">Dépannage</a>
     </nav>
 
+    <!-- ✅ Desktop only (mobile caché via CSS) -->
     <div class="nav-right">
       <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
       <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
     </div>
-
   </div>
 </header>
 
 <main id="top">
 
+  <!-- HERO -->
   <section class="hero fade-in">
     <div class="container hero-grid">
-
       <div>
-        <div class="pill-urgent"><span class="dot"></span> DÉPANNAGE EN URGENCE</div>
+        <div class="hero-pill"><span></span> DÉPANNAGE EN URGENCE</div>
 
         <h1>Dépannage auto, moto & poids lourds<br>24h/24 – 7j/7</h1>
 
@@ -419,14 +343,17 @@
         <h2>Zone d’intervention</h2>
         <p><strong>Île-de-France & alentours</strong></p>
         <p>Auto • Moto • Poids lourds</p>
-        <p style="font-size:0.9rem; opacity:0.9; margin-top:10px;">
+        <p style="font-size:.9rem;opacity:.9;margin-top:10px">
           Intervention immédiate selon disponibilité et distance.
         </p>
+        <p style="font-size:.82rem;opacity:.85;margin-top:10px">
+          En cas de danger immédiat sur la route, mettez-vous en sécurité et appelez les services d’urgence.
+        </p>
       </aside>
-
     </div>
   </section>
 
+  <!-- SERVICES -->
   <section id="services">
     <div class="container fade-in">
       <h2 class="section-title">Nos services de dépannage</h2>
@@ -437,22 +364,27 @@
           <h3>🚗 Dépannage auto</h3>
           <p>Assistance en cas de panne, véhicule immobilisé, démarrage impossible. Intervention rapide selon la zone.</p>
         </div>
+
         <div class="card fade-in">
           <h3>🏍️ Dépannage moto</h3>
           <p>Assistance moto, batterie à plat, transport sécurisé selon la situation et la distance.</p>
         </div>
+
         <div class="card fade-in">
           <h3>🚛 Dépannage poids lourds</h3>
-          <p>Interventions adaptées aux véhicules lourds : sécurisation, assistance et organisation du remorquage si nécessaire.</p>
+          <p>Interventions adaptées : sécurisation, assistance et organisation du remorquage si nécessaire.</p>
         </div>
+
         <div class="card fade-in">
           <h3>🛞 Changement de pneu</h3>
           <p>Assistance sur place pour pneu crevé / remplacement, selon disponibilité et sécurité d’intervention.</p>
         </div>
+
         <div class="card fade-in">
           <h3>🔋 Booster batterie</h3>
           <p>Démarrage / booster batterie en cas de batterie à plat.</p>
         </div>
+
         <div class="card fade-in">
           <h3>🧰 Assistance & remorquage</h3>
           <p>Diagnostic rapide et orientation : assistance sur place ou remorquage selon l’état du véhicule.</p>
@@ -461,13 +393,13 @@
     </div>
   </section>
 
+  <!-- URGENCE + CONTACT -->
   <section>
     <div class="container info-grid fade-in">
-
       <div class="cta-urgent">
-        <h2 style="font-size:1.2rem;">🚨 Besoin d’un dépannage en urgence ?</h2>
+        <h2 style="font-size:1.15rem;">🚨 Besoin d’un dépannage en urgence ?</h2>
         <p>Appelez-nous et décrivez la situation (type de véhicule, panne, localisation). Nous vous confirmons la prise en charge et le délai.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;">
           <a href="tel:0757823868" class="btn-primary" id="call-urgent">📞 Appel immédiat</a>
           <a href="index.html#contact" class="btn-outline">📅 RDV Pare-brise</a>
         </div>
@@ -475,13 +407,12 @@
 
       <div class="contact-box fade-in-right">
         <p><strong>Contact rapide :</strong></p>
-        <p>📞 07 57 82 38 68</p>
+        <p>📞 <a href="tel:0757823868">07 57 82 38 68</a></p>
         <p>Email : <a href="mailto:rapidautoplus@gmail.com">rapidautoplus@gmail.com</a></p>
-        <p style="margin-top:10px; font-size:0.9rem; color:#6b7280;">
+        <p style="margin-top:10px;font-size:.9rem;color:#6b7280;">
           Conseil : indiquez votre localisation précise et le type de panne pour un traitement plus rapide.
         </p>
       </div>
-
     </div>
   </section>
 
@@ -492,8 +423,8 @@
 </footer>
 
 <script>
-  // Animations "fade-in" identiques index
   document.addEventListener("DOMContentLoaded", () => {
+    // Animations fade-in (comme index)
     document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
       const obs = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) {
@@ -505,7 +436,7 @@
     });
 
     // Conversion Google Ads sur clic tel:
-    function trackCallClick() {
+    function trackCall() {
       if (typeof gtag === "function") {
         gtag('event', 'conversion', {
           'send_to': 'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
@@ -515,10 +446,14 @@
       }
     }
 
+    // track tous les tel: + boutons principaux
+    document.querySelectorAll('a[href^="tel"]').forEach(a => {
+      a.addEventListener("click", trackCall);
+    });
     const callNow = document.getElementById("call-now");
     const callUrgent = document.getElementById("call-urgent");
-    if (callNow) callNow.addEventListener("click", trackCallClick);
-    if (callUrgent) callUrgent.addEventListener("click", trackCallClick);
+    if (callNow) callNow.addEventListener("click", trackCall);
+    if (callUrgent) callUrgent.addEventListener("click", trackCall);
   });
 </script>
 
