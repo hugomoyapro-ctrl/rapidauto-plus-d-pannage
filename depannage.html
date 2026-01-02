@@ -36,10 +36,7 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       max-width: 1100px;
@@ -48,7 +45,7 @@
     }
 
     /* =========================
-       HEADER (IDENTIQUE INDEX)
+       HEADER (mêmes bases que ton index)
        ========================= */
     header {
       background: #111827;
@@ -75,7 +72,7 @@
       min-width: 0;
     }
 
-    /* Logo plus grand et sans “bloc blanc” (ton PNG est déjà ok) */
+    /* logo + visible */
     .logo-icon {
       height: 42px;
       width: auto;
@@ -91,7 +88,7 @@
       white-space: nowrap;
     }
 
-    /* Centre: boutons pages */
+    /* Centre (boutons pages) */
     .nav-center {
       display: flex;
       align-items: center;
@@ -129,6 +126,7 @@
       font-weight: 650;
     }
 
+    /* Droite (boutons rouges) */
     .nav-right {
       display: flex;
       align-items: center;
@@ -186,11 +184,7 @@
        ========================= */
     .hero {
       padding: 70px 0 80px;
-      background: linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.78),
-          rgba(239, 68, 68, 0.25)
-        );
+      background: linear-gradient(135deg, rgba(15,23,42,0.78), rgba(239,68,68,0.25));
       color: white;
     }
 
@@ -253,13 +247,8 @@
     /* =========================
        SECTIONS
        ========================= */
-    section {
-      padding: 60px 0;
-    }
-
-    section:nth-of-type(even) {
-      background: white;
-    }
+    section { padding: 60px 0; }
+    section:nth-of-type(even) { background: white; }
 
     .section-title {
       text-align: center;
@@ -341,32 +330,25 @@
     .fade-in { transform: translateY(18px); }
     .fade-in-right { transform: translateX(24px); }
 
-    .visible {
-      opacity: 1;
-      transform: translate(0,0);
-    }
+    .visible { opacity: 1; transform: translate(0,0); }
 
     /* TABLETTE */
     @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
     }
 
-    /* MOBILE: 1 seule ligne + pas de boutons rouges */
+    /* MOBILE: 1 seule ligne + cache boutons rouges */
     @media (max-width: 480px) {
       header { padding: 8px 0; }
 
-      /* On force sur 1 ligne */
+      /* 1 ligne */
       .nav {
         flex-wrap: nowrap;
         gap: 8px;
       }
 
-      /* Logo plus grand et texte lisible */
+      /* logo un peu plus grand */
       .logo-icon { height: 44px; }
 
       .logo {
@@ -374,26 +356,18 @@
         line-height: 1;
       }
 
-      /* Centre compact */
-      .nav-center {
-        gap: 6px;
-      }
-      .nav-link {
-        padding: 6px 10px;
-        font-size: 0.72rem;
-      }
+      .nav-center { gap: 6px; }
+      .nav-link { padding: 6px 10px; font-size: 0.72rem; }
 
-      /* On cache les boutons rouges sur mobile */
-      .nav-right {
-        display: none;
-      }
+      /* pas de boutons rouges sur mobile */
+      .nav-right { display: none; }
 
-      /* Si la largeur est ultra petite, on autorise un scroll horizontal du header (mais 1 ligne) */
+      /* garde 1 ligne même si très petit (scroll horizontal) */
       header { overflow-x: auto; }
       header::-webkit-scrollbar { display: none; }
 
       .hero { padding-top: 60px; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 1.85rem; }
     }
   </style>
 </head>
@@ -402,8 +376,9 @@
 
 <header>
   <div class="container nav">
-    <!-- ✅ clic sur le titre = retour en haut -->
-    <a href="#top" class="logo-area">
+
+    <!-- ✅ Retour en haut via clic sur logo+titre -->
+    <a href="#top" class="logo-area" aria-label="Retour en haut">
       <img src="logo-depannage.png" class="logo-icon" alt="Logo Rapid Dépannage Auto">
       <span class="logo">RAPID DÉPANNAGE AUTO</span>
     </a>
@@ -417,12 +392,12 @@
       <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
       <a href="index.html#contact" class="btn-primary">📅 Rendez-vous</a>
     </div>
+
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
   <section class="hero fade-in">
     <div class="container hero-grid">
 
@@ -443,16 +418,15 @@
       <aside class="hero-card fade-in-right">
         <h2>Zone d’intervention</h2>
         <p><strong>Île-de-France & alentours</strong></p>
-        <p>Selon distance et disponibilité.</p>
+        <p>Auto • Moto • Poids lourds</p>
         <p style="font-size:0.9rem; opacity:0.9; margin-top:10px;">
-          En cas de danger immédiat sur la route, mettez-vous en sécurité et appelez les services d’urgence.
+          Intervention immédiate selon disponibilité et distance.
         </p>
       </aside>
 
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="container fade-in">
       <h2 class="section-title">Nos services de dépannage</h2>
@@ -487,9 +461,9 @@
     </div>
   </section>
 
-  <!-- CTA + CONTACT -->
   <section>
     <div class="container info-grid fade-in">
+
       <div class="cta-urgent">
         <h2 style="font-size:1.2rem;">🚨 Besoin d’un dépannage en urgence ?</h2>
         <p>Appelez-nous et décrivez la situation (type de véhicule, panne, localisation). Nous vous confirmons la prise en charge et le délai.</p>
@@ -507,6 +481,7 @@
           Conseil : indiquez votre localisation précise et le type de panne pour un traitement plus rapide.
         </p>
       </div>
+
     </div>
   </section>
 
@@ -517,7 +492,7 @@
 </footer>
 
 <script>
-  // Animations identiques index
+  // Animations "fade-in" identiques index
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".fade-in, .fade-in-right").forEach(el => {
       const obs = new IntersectionObserver(entries => {
@@ -529,7 +504,7 @@
       obs.observe(el);
     });
 
-    // Conversion Google Ads (clic tel:)
+    // Conversion Google Ads sur clic tel:
     function trackCallClick() {
       if (typeof gtag === "function") {
         gtag('event', 'conversion', {
