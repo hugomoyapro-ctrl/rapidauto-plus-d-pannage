@@ -173,20 +173,11 @@ header {
     gap: 8px;
   }
 
-  /* 🔒 LOGO TOUJOURS À GAUCHE */
+  /* LOGO + NOM : GAUCHE */
   .logo-area {
-    width: auto;
-    justify-content: flex-start;
-  }
-
-  /* Boutons passent à la ligne si besoin */
-  .nav-center {
     width: 100%;
-    justify-content: flex-start;
-  }
-
-  .nav-right {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
   }
 
@@ -195,21 +186,36 @@ header {
   }
 
   .logo-icon {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
+  }
+
+  /* 🔥 BOUTONS AU MILIEU SOUS LE NOM */
+  .nav-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
   }
 
   .nav-link {
-    padding: 6px 10px;
+    padding: 6px 12px;
     font-size: 0.75rem;
   }
 
-  .btn-primary,
+  /* BOUTON TEL EN DESSOUS */
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .btn-phone {
-    padding: 6px 10px;
+    padding: 6px 14px;
     font-size: 0.75rem;
   }
 }
+
 
 
     /* HERO */
