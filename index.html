@@ -162,46 +162,57 @@ header {
   transform: translateY(-1px);
 }
 
-/* MOBILE */
-/* ===== FIX MOBILE HEADER (FORCÉ) ===== */
-@media (max-width: 480px) {
-  header { padding: 8px 0 !important; }
 
-  .nav {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    justify-content: space-between !important;
-  }
+    /* TABLETTE */
+    @media (max-width:768px){
+      .hero-grid{grid-template-columns:1fr}
+      .info-grid{grid-template-columns:1fr}
+    }
 
-  /* Ligne 1 : logo + nom à gauche */
-  .logo-area {
-    width: 100% !important;
-    justify-content: flex-start !important;
-  }
+    /* MOBILE */
+    @media (max-width:480px){
+      header{padding:8px 0}
+      .nav{flex-wrap:wrap;gap:6px}
+      .logo{font-size:.9rem}
+      .logo-icon{width:26px;height:26px}
 
-  /* Ligne 2 : Pare-brise / Dépannage centrés sous le nom */
-  .nav-center {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important;
-    margin-top: 6px !important;
-  }
+      /* on garde l’affichage propre */
+      .nav-center{width:100%;justify-content:center}
+      .nav-right{width:100%;justify-content:center}
 
-  /* Ligne 3 : boutons à droite/centre (tu peux choisir) */
-  .nav-right {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important; /* mets flex-end si tu veux à droite */
-    margin-top: 6px !important;
-  }
+      .btn-primary,.btn-phone,.nav-link{
+        padding:6px 8px;
+        font-size:.72rem;
+        white-space:nowrap;
+      }
 
-  .nav-link { padding: 6px 12px !important; font-size: 0.75rem !important; }
-  .btn-primary, .btn-phone { padding: 6px 14px !important; font-size: 0.75rem !important; }
-}
+      .hero{padding-top:60px}
+      .hero h1{font-size:1.6rem}
+    }
+  </style>
+</head>
 
+<body>
 
+<header>
+  <div class="container nav">
+    <div class="logo-area">
+      <img src="logo-depannage.png" class="logo-icon" alt="Logo Rapid Depannage Auto">
+      <a href="#top" class="logo">RAPID DEPANNAGE AUTO</a>
+    </div>
+
+    <nav class="nav-center" aria-label="Navigation principale">
+      <a class="nav-link" href="index.html">Pare-brise</a>
+      <a class="nav-link active" href="depannage.html">Dépannage</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="tel:0644661878" class="btn-phone">📞 Appeler</a>
+  </div>
+  </div>
+</header>
+
+<main id="top">
 
 
     /* HERO */
