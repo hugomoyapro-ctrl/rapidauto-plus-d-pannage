@@ -163,56 +163,70 @@ header {
 }
 
 
-    /* TABLETTE */
-    @media (max-width:768px){
-      .hero-grid{grid-template-columns:1fr}
-      .info-grid{grid-template-columns:1fr}
-    }
+    @media (max-width: 480px) {
 
-    /* MOBILE */
-    @media (max-width:480px){
-      header{padding:8px 0}
-      .nav{flex-wrap:wrap;gap:6px}
-      .logo{font-size:.9rem}
-      .logo-icon{width:26px;height:26px}
+  header {
+    padding: 8px 0;
+  }
 
-      /* on garde l’affichage propre */
-      .nav-center{width:100%;justify-content:center}
-      .nav-right{width:100%;justify-content:center}
+  .nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-      .btn-primary,.btn-phone,.nav-link{
-        padding:6px 8px;
-        font-size:.72rem;
-        white-space:nowrap;
-      }
+  /* ───────── LIGNE 1 : LOGO + NOM À GAUCHE ───────── */
+  .logo-area {
+    width: 100%;
+    justify-content: flex-start;
+  }
 
-      .hero{padding-top:60px}
-      .hero h1{font-size:1.6rem}
-    }
-  </style>
-</head>
+  .logo {
+    font-size: 0.9rem;
+  }
 
-<body>
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
 
-<header>
-  <div class="container nav">
-    <div class="logo-area">
-      <img src="logo-depannage.png" class="logo-icon" alt="Logo Rapid Depannage Auto">
-      <a href="#top" class="logo">RAPID DEPANNAGE AUTO</a>
-    </div>
+  /* ───────── LIGNE 2 : ONGLET PARE-BRISE / DÉPANNAGE CENTRÉS ───────── */
+  .nav-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
 
-    <nav class="nav-center" aria-label="Navigation principale">
-      <a class="nav-link" href="index.html">Pare-brise</a>
-      <a class="nav-link active" href="depannage.html">Dépannage</a>
-    </nav>
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
 
-    <div class="nav-right">
-      <a href="tel:0644661878" class="btn-phone">📞 Appeler</a>
-  </div>
-  </div>
-</header>
+  /* ───────── LIGNE 3 : BOUTONS ACTION ───────── */
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+  }
 
-<main id="top">
+  .btn-primary,
+  .btn-phone {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}
 
 
     /* HERO */
