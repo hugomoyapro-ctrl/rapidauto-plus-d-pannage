@@ -163,58 +163,44 @@ header {
 }
 
 /* MOBILE */
+/* ===== FIX MOBILE HEADER (FORCÉ) ===== */
 @media (max-width: 480px) {
-  header {
-    padding: 8px 0;
-  }
+  header { padding: 8px 0 !important; }
 
   .nav {
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    justify-content: space-between !important;
   }
 
-  /* LOGO + NOM : GAUCHE */
+  /* Ligne 1 : logo + nom à gauche */
   .logo-area {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100% !important;
+    justify-content: flex-start !important;
   }
 
-  .logo {
-    font-size: 0.9rem;
-  }
-
-  .logo-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  /* 🔥 BOUTONS AU MILIEU SOUS LE NOM */
+  /* Ligne 2 : Pare-brise / Dépannage centrés sous le nom */
   .nav-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 6px !important;
   }
 
-  .nav-link {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-  }
-
-  /* BOUTON TEL EN DESSOUS */
+  /* Ligne 3 : boutons à droite/centre (tu peux choisir) */
   .nav-right {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* mets flex-end si tu veux à droite */
+    margin-top: 6px !important;
   }
 
-  .btn-phone {
-    padding: 6px 14px;
-    font-size: 0.75rem;
-  }
+  .nav-link { padding: 6px 12px !important; font-size: 0.75rem !important; }
+  .btn-primary, .btn-phone { padding: 6px 14px !important; font-size: 0.75rem !important; }
 }
+
 
 
 
