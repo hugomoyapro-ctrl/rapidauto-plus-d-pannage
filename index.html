@@ -47,7 +47,9 @@
       padding: 0 16px;
     }
 
-    /* HEADER */
+    /* =======================
+       HEADER (PC IDENTIQUE)
+    ======================= */
     header {
       background: #111827;
       color: white;
@@ -73,10 +75,9 @@
       min-width: 0;
     }
 
-    /* ✅ Logo un peu plus grand (desktop + mobile) */
     .logo-icon {
-      width: 34px;
-      height: 34px;
+      width: 30px;
+      height: 30px;
       border-radius: 6px;
       object-fit: cover;
     }
@@ -87,16 +88,12 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 100%;
     }
 
-    /* ✅ NAV CENTER (comme dépannage) */
+    /* ✅ NAV CENTER (Pare-brise / Dépannage) */
     .nav-center{
       display:flex;
       align-items:center;
-      justify-content:center;
       gap:10px;
       flex-shrink:0;
       white-space:nowrap;
@@ -177,7 +174,9 @@
       border-color: #ffffffaa;
     }
 
-    /* HERO */
+    /* =======================
+       HERO
+    ======================= */
     .hero {
       padding: 70px 0 80px;
       background: linear-gradient(
@@ -296,7 +295,9 @@
       font-size: 0.9rem;
     }
 
-    /* SECTIONS */
+    /* =======================
+       SECTIONS
+    ======================= */
     section {
       padding: 60px 0;
     }
@@ -464,64 +465,59 @@
 
     /* TABLETTE */
     @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
     }
 
-    /* ✅ MOBILE HEADER (copie style dépannage) */
+    /* =======================
+       ✅ MOBILE HEADER FIX
+       - boutons AU DESSUS (header)
+       - texte jamais coupé
+    ======================= */
     @media (max-width: 480px) {
-      header { padding: 10px 0; }
+      header { padding: 8px 0; }
 
       .nav{
         flex-wrap: wrap;
-        gap: 10px;
+        justify-content: center;
+        gap: 8px;
       }
 
-      /* 1ère ligne : logo + nom à gauche */
       .logo-area{
-        flex: 1 1 100%;
-        justify-content: flex-start;
-      }
-
-      .logo{
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
       }
 
       .logo-icon{
-        width: 38px;
-        height: 38px;
+        width: 30px;
+        height: 30px;
       }
 
-      /* 2ème ligne : boutons nav au centre */
+      .logo{
+        white-space: normal;     /* ✅ plus de "..." */
+        overflow: visible;
+        text-overflow: unset;
+        text-align: center;
+        line-height: 1.1;
+      }
+
       .nav-center{
-        flex: 1 1 100%;
+        width: 100%;
         justify-content: center;
       }
 
-      /* 3ème ligne : boutons rouges centrés */
       .nav-right{
-        flex: 1 1 100%;
+        width: 100%;
         justify-content: center;
-        gap: 10px;
       }
 
       .btn-primary,
       .btn-phone{
-        padding: 8px 12px;
-        font-size: 0.78rem;
+        padding: 7px 10px;
+        font-size: 0.75rem;
       }
 
       .hero { padding-top: 60px; }
-
       .hero h1 { font-size: 1.6rem; }
     }
   </style>
@@ -536,13 +532,13 @@
       <a href="#top" class="logo">RAPID AUTO PLUS</a>
     </div>
 
-    <!-- ✅ Boutons Pare-brise / Dépannage (présents sur les 2 pages) -->
+    <!-- ✅ Boutons du milieu -->
     <div class="nav-center">
-      <a class="nav-link active" href="index.html">Pare-brise</a>
-      <a class="nav-link" href="depannage.html">Dépannage</a>
+      <a href="index.html" class="nav-link active">Pare-brise</a>
+      <a href="depannage.html" class="nav-link">Dépannage</a>
     </div>
 
-    <!-- ✅ Boutons rouges -->
+    <!-- ✅ Boutons actions à droite -->
     <div class="nav-right">
       <a href="tel:0757823868" class="btn-phone">📞 Appeler</a>
       <a href="#contact" class="btn-primary">📅 Rendez-vous</a>
@@ -780,7 +776,7 @@
       obs.observe(el);
     });
 
-    // Envoi AJAX du formulaire pour éviter la redirection FormSubmit / erreurs
+    // Envoi AJAX du formulaire
     const form = document.getElementById("contact-form");
     const messageBox = document.getElementById("form-message");
     const submitBtn = form.querySelector(".btn-submit");
@@ -803,7 +799,6 @@
         });
 
         if (res.ok) {
-          /* ✅ Conversion Google Ads (formulaire envoyé) */
           if (typeof gtag === "function") {
             gtag('event', 'conversion', {
               'send_to': 'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
