@@ -23,24 +23,70 @@
   </script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-    body { background: #f3f4f6; color: #111827; line-height: 1.6; }
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
     /* HEADER */
-    header { background: #111827; color: white; padding: 10px 0; position: sticky; top: 0; z-index: 50; }
+    header {
+      background: #111827;
+      color: white;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+    }
 
-    .logo-area { display: flex; align-items: center; gap: 6px; flex-shrink: 0; min-width: 0; }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      min-width: 0;
+    }
 
-    .logo-icon { width: 30px; height: 30px; border-radius: 6px; object-fit: cover; }
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
 
-    .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+    .logo {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
     /* ✅ NAV CENTER (Pare-brise / Dépannage) */
     .nav-center{
@@ -66,12 +112,26 @@
       white-space: nowrap;
       line-height: 1;
     }
-    .nav-link:hover { background: #ffffff11; border-color: #ffffffaa; }
-    .nav-link.active{ background: #ffffff18; border-color: #ffffffcc; font-weight: 600; }
+    .nav-link:hover {
+      background: #ffffff11;
+      border-color: #ffffffaa;
+    }
+    .nav-link.active{
+      background: #ffffff18;
+      border-color: #ffffffcc;
+      font-weight: 600;
+    }
 
-    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
 
-    .btn-primary, .btn-phone {
+    .btn-primary,
+    .btn-phone {
       background: #ef4444;
       color: white;
       padding: 8px 12px;
@@ -86,7 +146,12 @@
       gap: 6px;
       white-space: nowrap;
     }
-    .btn-primary:hover, .btn-phone:hover { background: #dc2626; transform: translateY(-1px); }
+
+    .btn-primary:hover,
+    .btn-phone:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+    }
 
     .btn-outline {
       border-radius: 999px;
@@ -102,17 +167,29 @@
       align-items: center;
       gap: 6px;
     }
-    .btn-outline:hover { background: #ffffff11; border-color: #ffffffaa; }
+
+    .btn-outline:hover {
+      background: #ffffff11;
+      border-color: #ffffffaa;
+    }
 
     /* HERO */
     .hero {
       padding: 70px 0 80px;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.65), rgba(30, 64, 175, 0.55)),
+      background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.65),
+          rgba(30, 64, 175, 0.55)
+        ),
         url("parebrise.png") center/cover no-repeat;
       color: white;
     }
 
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 40px;
+    }
 
     .hero-offer {
       display: inline-flex;
@@ -126,6 +203,7 @@
       margin-bottom: 10px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     }
+
     .hero-offer span {
       background: #facc15;
       color: #111827;
@@ -133,7 +211,11 @@
       padding: 2px 6px;
       border-radius: 999px;
     }
-    .hero-separator { opacity: 0.85; margin: 0 6px; }
+
+    .hero-separator {
+      opacity: 0.85;
+      margin: 0 6px;
+    }
 
     .hero-tag {
       display: inline-flex;
@@ -144,9 +226,19 @@
       font-size: 0.8rem;
       margin-bottom: 10px;
     }
-    .hero-tag span { width: 8px; height: 8px; border-radius: 999px; background: #22c55e; }
 
-    .hero h1 { font-size: clamp(1.9rem, 3vw, 2.4rem); margin-bottom: 12px; line-height: 1.25; }
+    .hero-tag span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
 
     .badge-assurance-inline {
       display: inline-flex;
@@ -162,13 +254,34 @@
       border: 1px solid rgba(74, 222, 128, 0.6);
       vertical-align: middle;
     }
-    .badge-assurance-inline span { width: 8px; height: 8px; border-radius: 999px; background: #22c55e; box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35); }
 
-    .hero p { max-width: 520px; margin-bottom: 10px; opacity: 0.95; font-size: 0.95rem; }
+    .badge-assurance-inline span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+    }
 
-    .hero-highlight { opacity: 0.9; margin-bottom: 14px; font-size: 0.9rem; }
+    .hero p {
+      max-width: 520px;
+      margin-bottom: 10px;
+      opacity: 0.95;
+      font-size: 0.95rem;
+    }
 
-    .hero-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-highlight {
+      opacity: 0.9;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+    }
+
+    .hero-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
     .hero-card {
       background: rgba(15, 23, 42, 0.9);
@@ -180,13 +293,31 @@
     }
 
     /* SECTIONS */
-    section { padding: 60px 0; }
-    section:nth-of-type(even) { background: white; }
+    section {
+      padding: 60px 0;
+    }
 
-    .section-title { text-align: center; font-size: 1.4rem; margin-bottom: 6px; }
-    .section-subtitle { text-align: center; color: #6b7280; margin-bottom: 20px; }
+    section:nth-of-type(even) {
+      background: white;
+    }
 
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .section-title {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
 
     .card {
       background: white;
@@ -197,52 +328,56 @@
       font-size: 0.9rem;
     }
 
-    .card h3 { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .card h3 {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
 
-    .step { border: 1px dashed #ddd; padding: 14px; border-radius: 12px; background: #f9fafb; font-size: 0.9rem; }
+    .step {
+      border: 1px dashed #ddd;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f9fafb;
+      font-size: 0.9rem;
+    }
 
     /* ZONE & CONTACT */
-    .info-grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 30px; }
+    .info-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 30px;
+    }
 
-    .contact-box { padding: 16px; background: #f9fafb; border-radius: 14px; border: 1px solid #e5e7eb; font-size: 0.9rem; }
-
-    /* ✅ HORAIRES (BADGES) */
-    .badges {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:10px;
-    }
-    .badge {
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:0.8rem;
-      font-weight:600;
-      border:1px solid #e5e7eb;
-      background:#fff;
-      color:#111827;
-      white-space:nowrap;
-    }
-    .badge.green {
-      border-color: rgba(34, 197, 94, 0.35);
-      background: rgba(34, 197, 94, 0.10);
-      color: #166534;
-    }
-    .badge.dark {
-      border-color: rgba(17, 24, 39, 0.25);
-      background: rgba(17, 24, 39, 0.06);
-      color: #111827;
+    .contact-box {
+      padding: 16px;
+      background: #f9fafb;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.9rem;
     }
 
     /* FORMULAIRE */
-    form { display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
 
-    label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: block; }
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
 
     input, textarea, select {
       width: 100%;
@@ -255,12 +390,17 @@
       transition: 0.2s;
     }
 
-    input:focus, textarea:focus, select:focus {
+    input:focus,
+    textarea:focus,
+    select:focus {
       border-color: #ef4444;
       box-shadow: 0 0 0 2px rgba(239,68,68,0.25);
     }
 
-    textarea { min-height: 90px; resize: vertical; }
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
 
     .btn-submit {
       background: #ef4444;
@@ -272,13 +412,29 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    .btn-submit:hover { background: #dc2626; transform: translateY(-1px); }
 
-    .form-message { margin-top: 6px; font-size: 0.8rem; display: none; }
-    .form-message.success { display: block; color: #16a34a; }
-    .form-message.error { display: block; color: #dc2626; }
+    .btn-submit:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+    }
 
-    /* ✅ PJ (comme avant : encadré “onglet”, ouvert direct) */
+    .form-message {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      display: none;
+    }
+
+    .form-message.success {
+      display: block;
+      color: #16a34a;
+    }
+
+    .form-message.error {
+      display: block;
+      color: #dc2626;
+    }
+
+    /* ✅ PJ encadré (simple, ouvert direct) */
     .pj-tab{
       margin-top:14px;
       border-radius:14px;
@@ -293,7 +449,6 @@
       gap:10px;
       padding:12px 14px;
       background:rgba(239,68,68,0.08);
-      user-select:none;
     }
     .pj-tab-head strong{ color:#b91c1c; font-size:0.92rem; }
     .pj-tab-head span{ font-size:0.9rem; opacity:0.75; }
@@ -340,37 +495,93 @@
     }
 
     /* FOOTER */
-    footer { background: #111827; color: #9ca3af; text-align: center; padding: 18px 0; font-size: 0.85rem; }
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 0.85rem;
+    }
 
     /* ANIMATIONS */
-    .fade-in, .fade-in-right { opacity: 0; transition: 0.6s ease; }
+    .fade-in,
+    .fade-in-right {
+      opacity: 0;
+      transition: 0.6s ease;
+    }
+
     .fade-in { transform: translateY(18px); }
     .fade-in-right { transform: translateX(24px); }
-    .visible { opacity: 1; transform: translate(0,0); }
+
+    .visible {
+      opacity: 1;
+      transform: translate(0,0);
+    }
 
     /* TABLETTE */
     @media (max-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .info-grid { grid-template-columns: 1fr; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    /* MOBILE HEADER */
+    /* ✅ MOBILE HEADER : logo+texte à gauche, nav-center centré dessous, boutons centrés dessous */
     @media (max-width: 480px) {
-      header { padding: 8px 0; }
-      .nav { flex-wrap: wrap; gap: 8px; }
+      header {
+        padding: 8px 0;
+      }
 
-      .logo-area { width: 100%; justify-content: flex-start; min-width: 0; }
+      .nav {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
 
-      .logo { white-space: normal; overflow: visible; text-overflow: unset; max-width: 100%; line-height: 1.1; text-align: left; }
+      /* ligne 1 : logo à gauche */
+      .logo-area {
+        width: 100%;
+        justify-content: flex-start;
+        min-width: 0;
+      }
 
-      .nav-center{ width: 100%; justify-content: center; }
+      .logo {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        max-width: 100%;
+        line-height: 1.1;
+        text-align: left;
+      }
 
-      .nav-right { width: 100%; justify-content: center; gap: 10px; }
+      /* ligne 2 : nav center au milieu */
+      .nav-center{
+        width: 100%;
+        justify-content: center;
+      }
 
-      .btn-primary, .btn-phone { padding: 6px 10px; font-size: 0.75rem; }
+      /* ligne 3 : boutons rouges au milieu */
+      .nav-right {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+      }
 
-      .hero { padding-top: 60px; }
-      .hero h1 { font-size: 1.6rem; }
+      .btn-primary,
+      .btn-phone {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
 
       .pj-tab-head span{ display:none; }
     }
@@ -426,19 +637,9 @@
         </h1>
 
         <p>Intervention rapide, professionnelle et directement à votre adresse, avec prise en charge possible par votre assurance.</p>
+        <p class="hero-highlight">Pose soignée • Matériel professionnel • Immobilisation minimale du véhicule</p>
 
-        <p class="hero-highlight">
-          Pose soignée • Matériel professionnel • Immobilisation minimale du véhicule
-        </p>
-
-        <!-- ✅ Horaires en badges (plus clean) -->
-        <div class="badges">
-          <span class="badge green">🟢 7j/7</span>
-          <span class="badge dark">🕘 8h00–20h00</span>
-          <span class="badge dark">⚡ Intervention rapide</span>
-        </div>
-
-        <div class="hero-actions" style="margin-top:14px;">
+        <div class="hero-actions">
           <a href="#contact" class="btn-primary">📅 Prendre un rendez-vous</a>
           <a href="tel:0757823868" class="btn-outline">📞 Appeler maintenant</a>
         </div>
@@ -538,12 +739,16 @@
         <p>📞 07 57 82 38 68</p>
         <p>Email : <a href="mailto:rapidautoplus@gmail.com">rapidautoplus@gmail.com</a></p>
 
-        <div class="badges">
-          <span class="badge green">🟢 7j/7</span>
-          <span class="badge dark">🕘 8h00–20h00</span>
-        </div>
-
-        <p style="font-size:0.85rem; opacity:0.8; margin-top:8px;">Intervention selon disponibilité</p>
+        <!-- ✅ Horaires simples (liste) -->
+        <hr style="margin:12px 0; border:none; border-top:1px solid #e5e7eb;">
+        <p><strong>Horaires :</strong></p>
+        <p>Lundi : 08:00 – 20:00</p>
+        <p>Mardi : 08:00 – 20:00</p>
+        <p>Mercredi : 08:00 – 20:00</p>
+        <p>Jeudi : 08:00 – 20:00</p>
+        <p>Vendredi : 08:00 – 20:00</p>
+        <p>Samedi : 08:00 – 20:00</p>
+        <p>Dimanche : 08:00 – 20:00</p>
       </div>
 
     </div>
@@ -556,11 +761,6 @@
       <div>
         <h2 class="section-title" style="text-align:left;">Demande de rendez-vous</h2>
         <p>Remplissez le formulaire pour une prise en charge rapide.</p>
-
-        <div class="badges" style="margin-top:10px;">
-          <span class="badge green">🟢 7j/7</span>
-          <span class="badge dark">🕘 8h00–20h00</span>
-        </div>
       </div>
 
       <div class="contact-box fade-in-right">
@@ -625,15 +825,15 @@
           <div id="form-message" class="form-message"></div>
         </form>
 
-        <!-- ✅ PJ encadré comme avant -->
+        <!-- ✅ Encadré PJ (comme tu voulais, ouvert direct) -->
         <div class="pj-tab">
           <div class="pj-tab-head">
-            <strong>📎 Envoyer les photos / documents</strong>
+            <strong>📎 Envoyer les documents (après la demande)</strong>
             <span>WhatsApp / SMS / Email</span>
           </div>
 
           <div class="pj-tab-body">
-            <p>Pour établir le devis plus rapidement, merci d’envoyer <strong>après votre demande</strong> :</p>
+            <p>Pour établir le devis plus rapidement, merci d’envoyer <strong>après avoir rempli le formulaire</strong> :</p>
 
             <ul class="pj-list">
               <li>Photo de l’impact</li>
@@ -663,8 +863,6 @@
 
 <footer>
   © Rapid Auto Plus — Remplacement de pare-brise à domicile — Versailles, Île-de-France & 28
-  <br>
-  📞 07 57 82 38 68 • 7j/7 • 8h00–20h00
 </footer>
 
 <script>
@@ -681,7 +879,7 @@
       obs.observe(el);
     });
 
-    // Envoi AJAX du formulaire
+    // Envoi AJAX du formulaire pour éviter la redirection FormSubmit / erreurs
     const form = document.getElementById("contact-form");
     const messageBox = document.getElementById("form-message");
     const submitBtn = form.querySelector(".btn-submit");
