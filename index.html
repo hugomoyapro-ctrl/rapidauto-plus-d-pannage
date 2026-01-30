@@ -14,7 +14,6 @@
   <meta name="theme-color" content="#111827">
 
   <!-- ✅ GOOGLE ADS TAG -->
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNFN6SX78Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,79 +23,27 @@
   </script>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 
-    body {
-      background: #f3f4f6;
-      color: #111827;
-      line-height: 1.6;
-    }
+    body { background: #f3f4f6; color: #111827; line-height: 1.6; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
     /* HEADER */
-    header {
-      background: #111827;
-      color: white;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+    header { background: #111827; color: white; padding: 10px 0; position: sticky; top: 0; z-index: 50; }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      width: 100%;
-    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-shrink: 0;
-      min-width: 0;
-    }
+    .logo-area { display: flex; align-items: center; gap: 6px; flex-shrink: 0; min-width: 0; }
 
-    .logo-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 6px;
-      object-fit: cover;
-    }
+    .logo-icon { width: 30px; height: 30px; border-radius: 6px; object-fit: cover; }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+    .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
 
-    /* ✅ NAV CENTER (Pare-brise / Dépannage) */
-    .nav-center{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-shrink:0;
-      white-space:nowrap;
-    }
+    /* NAV CENTER */
+    .nav-center{ display:flex; align-items:center; gap:10px; flex-shrink:0; white-space:nowrap; }
     .nav-link{
       border-radius: 999px;
       padding: 8px 14px;
@@ -113,26 +60,12 @@
       white-space: nowrap;
       line-height: 1;
     }
-    .nav-link:hover {
-      background: #ffffff11;
-      border-color: #ffffffaa;
-    }
-    .nav-link.active{
-      background: #ffffff18;
-      border-color: #ffffffcc;
-      font-weight: 600;
-    }
+    .nav-link:hover { background: #ffffff11; border-color: #ffffffaa; }
+    .nav-link.active{ background: #ffffff18; border-color: #ffffffcc; }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap; }
 
-    .btn-primary,
-    .btn-phone {
+    .btn-primary, .btn-phone {
       background: #ef4444;
       color: white;
       padding: 8px 12px;
@@ -147,12 +80,7 @@
       gap: 6px;
       white-space: nowrap;
     }
-
-    .btn-primary:hover,
-    .btn-phone:hover {
-      background: #dc2626;
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover, .btn-phone:hover { background: #dc2626; transform: translateY(-1px); }
 
     .btn-outline {
       border-radius: 999px;
@@ -168,29 +96,16 @@
       align-items: center;
       gap: 6px;
     }
-
-    .btn-outline:hover {
-      background: #ffffff11;
-      border-color: #ffffffaa;
-    }
+    .btn-outline:hover { background: #ffffff11; border-color: #ffffffaa; }
 
     /* HERO */
     .hero {
       padding: 70px 0 80px;
-      background: linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.65),
-          rgba(30, 64, 175, 0.55)
-        ),
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.65), rgba(30, 64, 175, 0.55)),
         url("parebrise.png") center/cover no-repeat;
       color: white;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 40px;
-    }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; }
 
     .hero-offer {
       display: inline-flex;
@@ -204,7 +119,6 @@
       margin-bottom: 10px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     }
-
     .hero-offer span {
       background: #facc15;
       color: #111827;
@@ -212,11 +126,7 @@
       padding: 2px 6px;
       border-radius: 999px;
     }
-
-    .hero-separator {
-      opacity: 0.85;
-      margin: 0 6px;
-    }
+    .hero-separator { opacity: 0.85; margin: 0 6px; }
 
     .hero-tag {
       display: inline-flex;
@@ -227,19 +137,9 @@
       font-size: 0.8rem;
       margin-bottom: 10px;
     }
+    .hero-tag span { width: 8px; height: 8px; border-radius: 999px; background: #22c55e; }
 
-    .hero-tag span {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .hero h1 {
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      margin-bottom: 12px;
-      line-height: 1.25;
-    }
+    .hero h1 { font-size: clamp(1.9rem, 3vw, 2.4rem); margin-bottom: 12px; line-height: 1.25; }
 
     .badge-assurance-inline {
       display: inline-flex;
@@ -255,34 +155,13 @@
       border: 1px solid rgba(74, 222, 128, 0.6);
       vertical-align: middle;
     }
+    .badge-assurance-inline span { width: 8px; height: 8px; border-radius: 999px; background: #22c55e; box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35); }
 
-    .badge-assurance-inline span {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
-    }
+    .hero p { max-width: 520px; margin-bottom: 10px; opacity: 0.95; font-size: 0.95rem; }
 
-    .hero p {
-      max-width: 520px;
-      margin-bottom: 10px;
-      opacity: 0.95;
-      font-size: 0.95rem;
-    }
+    .hero-highlight { opacity: 0.9; margin-bottom: 14px; font-size: 0.9rem; }
 
-    .hero-highlight {
-      opacity: 0.9;
-      margin-bottom: 14px;
-      font-size: 0.9rem;
-    }
-
-    .hero-actions {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .hero-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
 
     .hero-card {
       background: rgba(15, 23, 42, 0.9);
@@ -294,32 +173,13 @@
     }
 
     /* SECTIONS */
-    section {
-      padding: 60px 0;
-    }
+    section { padding: 60px 0; }
+    section:nth-of-type(even) { background: white; }
 
-    section:nth-of-type(even) {
-      background: white;
-    }
+    .section-title { text-align: center; font-size: 1.4rem; margin-bottom: 6px; }
+    .section-subtitle { text-align: center; color: #6b7280; margin-bottom: 20px; }
 
-    .section-title {
-      text-align: center;
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #6b7280;
-      margin-bottom: 20px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
-
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
     .card {
       background: white;
       border-radius: 16px;
@@ -328,57 +188,19 @@
       box-shadow: 0 8px 22px rgba(0,0,0,0.05);
       font-size: 0.9rem;
     }
+    .card h3 { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
 
-    .card h3 {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .step {
-      border: 1px dashed #ddd;
-      padding: 14px;
-      border-radius: 12px;
-      background: #f9fafb;
-      font-size: 0.9rem;
-    }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .step { border: 1px dashed #ddd; padding: 14px; border-radius: 12px; background: #f9fafb; font-size: 0.9rem; }
 
     /* ZONE & CONTACT */
-    .info-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 30px;
-    }
+    .info-grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 30px; }
 
-    .contact-box {
-      padding: 16px;
-      background: #f9fafb;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      font-size: 0.9rem;
-    }
+    .contact-box { padding: 16px; background: #f9fafb; border-radius: 14px; border: 1px solid #e5e7eb; font-size: 0.9rem; }
 
-    /* FORMULAIRE */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      font-size: 0.9rem;
-    }
-
-    label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      display: block;
-    }
+    /* FORM */
+    form { display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; }
+    label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: block; }
 
     input, textarea, select {
       width: 100%;
@@ -390,18 +212,9 @@
       outline: none;
       transition: 0.2s;
     }
+    input:focus, textarea:focus, select:focus { border-color: #ef4444; box-shadow: 0 0 0 2px rgba(239,68,68,0.25); }
 
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: #ef4444;
-      box-shadow: 0 0 0 2px rgba(239,68,68,0.25);
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
+    textarea { min-height: 90px; resize: vertical; }
 
     .btn-submit {
       background: #ef4444;
@@ -413,193 +226,75 @@
       cursor: pointer;
       transition: 0.2s;
     }
+    .btn-submit:hover { background: #dc2626; transform: translateY(-1px); }
 
-    .btn-submit:hover {
-      background: #dc2626;
-      transform: translateY(-1px);
-    }
+    .form-message { margin-top: 6px; font-size: 0.8rem; display: none; }
+    .form-message.success { display: block; color: #16a34a; }
+    .form-message.error { display: block; color: #dc2626; }
 
-    .form-message {
-      margin-top: 6px;
-      font-size: 0.8rem;
-      display: none;
-    }
-
-    .form-message.success {
-      display: block;
-      color: #16a34a;
-    }
-
-    .form-message.error {
-      display: block;
-      color: #dc2626;
-    }
-
-    /* ✅ PJ "onglet" (info) */
-    .pj-tab{
+    /* ✅ Bloc pièces jointes (même style que contact-box) */
+    .pj-note{
       margin-top:14px;
+      padding:14px;
       border-radius:14px;
-      border:1px solid rgba(239,68,68,0.25);
-      overflow:hidden;
-      background:#fff;
+      border:1px solid #e5e7eb;
+      background:#ffffff;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+      font-size:0.9rem;
     }
-    .pj-tab-head{
+    .pj-note h4{
+      font-size:1rem;
+      margin-bottom:6px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 14px;
-      background:rgba(239,68,68,0.08);
-      cursor:pointer;
-      user-select:none;
-    }
-    .pj-tab-head strong{
-      color:#b91c1c;
-      font-size:0.92rem;
-    }
-    .pj-tab-head span{
-      font-size:0.9rem;
-      opacity:0.75;
-    }
-    .pj-tab-body{
-      padding:14px;
-      display:block; /* ✅ OUVERT DIRECT */
-      font-size:0.9rem;
+      gap:8px;
       color:#111827;
     }
-    .pj-tab-body p{
-      margin-bottom:10px;
-      color:#374151;
-    }
-    .pj-list{
-      margin:8px 0 12px 18px;
-      color:#111827;
-    }
-    .pj-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:10px;
-    }
-    .btn-mini{
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:0.8rem;
-      font-weight:600;
+    .pj-note p{ color:#374151; margin-bottom:10px; }
+    .pj-note ul{ margin: 0 0 10px 18px; color:#111827; }
+    .pj-badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .pj-badge{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      border:1px solid transparent;
-      cursor:pointer;
-      transition:.2s;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      font-size:0.8rem;
+      color:#111827;
       white-space:nowrap;
-    }
-    .btn-mini.red{
-      background:#ef4444;
-      color:white;
-    }
-    .btn-mini.red:hover{ background:#dc2626; transform:translateY(-1px); }
-    .btn-mini.outline{
-      background:transparent;
-      color:#ef4444;
-      border-color:rgba(239,68,68,0.45);
-    }
-    .btn-mini.outline:hover{
-      background:rgba(239,68,68,0.08);
-      border-color:rgba(239,68,68,0.7);
-      transform:translateY(-1px);
     }
 
     /* FOOTER */
-    footer {
-      background: #111827;
-      color: #9ca3af;
-      text-align: center;
-      padding: 18px 0;
-      font-size: 0.85rem;
-    }
+    footer { background: #111827; color: #9ca3af; text-align: center; padding: 18px 0; font-size: 0.85rem; }
 
     /* ANIMATIONS */
-    .fade-in,
-    .fade-in-right {
-      opacity: 0;
-      transition: 0.6s ease;
-    }
-
+    .fade-in, .fade-in-right { opacity: 0; transition: 0.6s ease; }
     .fade-in { transform: translateY(18px); }
     .fade-in-right { transform: translateX(24px); }
+    .visible { opacity: 1; transform: translate(0,0); }
 
-    .visible {
-      opacity: 1;
-      transform: translate(0,0);
-    }
-
-    /* TABLETTE */
     @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
     }
 
-    /* ✅ MOBILE HEADER : logo+texte à gauche, nav-center centré dessous, boutons centrés dessous */
     @media (max-width: 480px) {
-      header {
-        padding: 8px 0;
-      }
+      header { padding: 8px 0; }
+      .nav { flex-wrap: wrap; gap: 8px; }
 
-      .nav {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
+      .logo-area { width: 100%; justify-content: flex-start; min-width: 0; }
 
-      /* ligne 1 : logo à gauche */
-      .logo-area {
-        width: 100%;
-        justify-content: flex-start;
-        min-width: 0;
-      }
+      .logo { white-space: normal; overflow: visible; text-overflow: unset; max-width: 100%; line-height: 1.1; text-align: left; }
 
-      .logo {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-        max-width: 100%;
-        line-height: 1.1;
-        text-align: left;
-      }
+      .nav-center{ width: 100%; justify-content: center; }
+      .nav-right { width: 100%; justify-content: center; gap: 10px; }
 
-      /* ligne 2 : nav center au milieu */
-      .nav-center{
-        width: 100%;
-        justify-content: center;
-      }
+      .btn-primary, .btn-phone { padding: 6px 10px; font-size: 0.75rem; }
 
-      /* ligne 3 : boutons rouges au milieu */
-      .nav-right {
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .btn-primary,
-      .btn-phone {
-        padding: 6px 10px;
-        font-size: 0.75rem;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .hero h1 {
-        font-size: 1.6rem;
-      }
-
-      .pj-tab-head span{ display:none; }
+      .hero { padding-top: 60px; }
+      .hero h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -654,7 +349,6 @@
 
         <p>Intervention rapide, professionnelle et directement à votre adresse, avec prise en charge possible par votre assurance.</p>
 
-        <!-- ✅ AJOUT : horaires 7j/7 dans le hero -->
         <p class="hero-highlight">
           Pose soignée • Matériel professionnel • Immobilisation minimale du véhicule
           <br>
@@ -761,7 +455,6 @@
         <p>📞 07 57 82 38 68</p>
         <p>Email : <a href="mailto:rapidautoplus@gmail.com">rapidautoplus@gmail.com</a></p>
 
-        <!-- ✅ AJOUT : horaires -->
         <hr style="margin:12px 0; border:none; border-top:1px solid #e5e7eb;">
         <p><strong>Horaires :</strong></p>
         <p style="color:#16a34a; font-weight:700;">✅ Lundi – Dimanche : 8h00 – 20h00</p>
@@ -779,7 +472,6 @@
         <h2 class="section-title" style="text-align:left;">Demande de rendez-vous</h2>
         <p>Remplissez le formulaire pour une prise en charge rapide.</p>
 
-        <!-- ✅ AJOUT : rappel horaires -->
         <p style="margin-top:10px; font-size:0.9rem; opacity:0.9;">
           <strong style="color:#16a34a;">✅ Disponible 7j/7 — 8h00 à 20h00</strong>
         </p>
@@ -847,38 +539,29 @@
           <div id="form-message" class="form-message"></div>
         </form>
 
-        <!-- ✅ AJOUT : onglet PJ (ouvert direct) -->
-        <div class="pj-tab" id="pj-tab">
-          <div class="pj-tab-head" id="pj-toggle" role="button" aria-expanded="true" tabindex="0">
-            <strong>📎 Envoyer les photos / documents</strong>
-            <span>WhatsApp / SMS / Email</span>
+        <!-- ✅ Bloc PJ (même style que le site) -->
+        <div class="pj-note">
+          <h4>📎 Envoi des documents (après la demande)</h4>
+          <p>
+            Pour accélérer le devis, merci d’envoyer <strong>après avoir rempli le formulaire</strong> :
+          </p>
+          <ul>
+            <li>Photo de l’impact</li>
+            <li>Carte grise</li>
+            <li>Attestation d’assurance</li>
+          </ul>
+
+          <div class="pj-badges">
+            <span class="pj-badge">📞 WhatsApp / SMS : 07 57 82 38 68</span>
+            <span class="pj-badge">✉️ Email : rapidautoplus@gmail.com</span>
+            <span class="pj-badge">🕘 7j/7 • 8h–20h</span>
           </div>
 
-          <div class="pj-tab-body" id="pj-body">
-            <p>
-              Pour établir le devis plus rapidement, merci de nous transmettre <strong>après votre demande</strong> :
-            </p>
-
-            <ul class="pj-list">
-              <li>• Photo de l’impact</li>
-              <li>• Carte grise</li>
-              <li>• Attestation d’assurance</li>
-            </ul>
-
-            <p>
-              Vous pouvez les envoyer <strong>par téléphone (WhatsApp / SMS)</strong> ou <strong>par email</strong>.
-            </p>
-
-            <div class="pj-actions">
-              <a class="btn-mini red" href="tel:0757823868">📞 Envoyer par téléphone</a>
-              <a class="btn-mini outline" href="mailto:rapidautoplus@gmail.com?subject=Pi%C3%A8ces%20jointes%20-%20Rapid%20Auto%20Plus&body=Bonjour%2C%0A%0AVoici%20les%20documents%20pour%20mon%20devis%20%3A%20assurance%20%2F%20carte%20grise%20%2F%20photo%20impact.%0A%0AMon%20immatriculation%20%3A%20%0A%0AMerci.">✉️ Envoyer par email</a>
-            </div>
-
-            <p style="margin-top:10px; font-size:0.85rem; color:#6b7280;">
-              Astuce : indiquez votre <strong>immatriculation</strong> dans le message pour qu’on retrouve votre demande.
-            </p>
-          </div>
+          <p style="margin-top:10px; font-size:0.85rem; color:#6b7280;">
+            Astuce : indiquez votre <strong>immatriculation</strong> dans le message pour qu’on retrouve votre demande.
+          </p>
         </div>
+
       </div>
 
     </div>
@@ -886,7 +569,6 @@
 
 </main>
 
-<!-- ✅ AJOUT : horaires dans le footer -->
 <footer>
   © Rapid Auto Plus — Remplacement de pare-brise à domicile — Versailles, Île-de-France & 28
   <br>
@@ -907,7 +589,7 @@
       obs.observe(el);
     });
 
-    // Envoi AJAX du formulaire pour éviter la redirection FormSubmit / erreurs
+    // Envoi AJAX du formulaire (FormSubmit)
     const form = document.getElementById("contact-form");
     const messageBox = document.getElementById("form-message");
     const submitBtn = form.querySelector(".btn-submit");
@@ -930,7 +612,7 @@
         });
 
         if (res.ok) {
-          /* ✅ Conversion Google Ads (formulaire envoyé) */
+          // Conversion (si tu utilises AW, garde ton event comme avant)
           if (typeof gtag === "function") {
             gtag('event', 'conversion', {
               'send_to': 'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
@@ -942,14 +624,6 @@
           form.reset();
           messageBox.textContent = "Merci, votre demande a bien été envoyée. Vous serez recontacté rapidement.";
           messageBox.className = "form-message success";
-
-          // ✅ garder l’onglet PJ ouvert après envoi
-          const pjBody = document.getElementById("pj-body");
-          const pjToggle = document.getElementById("pj-toggle");
-          if (pjBody && pjToggle) {
-            pjBody.style.display = "block";
-            pjToggle.setAttribute("aria-expanded", "true");
-          }
         } else {
           messageBox.textContent = "Une erreur est survenue lors de l’envoi. Vous pouvez aussi appeler le 07 57 82 38 68.";
           messageBox.className = "form-message error";
@@ -962,26 +636,6 @@
         submitBtn.textContent = originalText;
       }
     });
-
-    // Toggle PJ (optionnel) : on peut fermer/réouvrir quand même
-    const toggle = document.getElementById("pj-toggle");
-    const body = document.getElementById("pj-body");
-
-    function togglePJ(){
-      const isOpen = body.style.display === "block";
-      body.style.display = isOpen ? "none" : "block";
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-    }
-
-    if (toggle && body) {
-      toggle.addEventListener("click", togglePJ);
-      toggle.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          togglePJ();
-        }
-      });
-    }
   });
 </script>
 
