@@ -42,8 +42,14 @@
 
     .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
 
-    /* NAV CENTER */
-    .nav-center{ display:flex; align-items:center; gap:10px; flex-shrink:0; white-space:nowrap; }
+    /* ✅ NAV CENTER (Pare-brise / Dépannage) */
+    .nav-center{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+      white-space:nowrap;
+    }
     .nav-link{
       border-radius: 999px;
       padding: 8px 14px;
@@ -61,7 +67,7 @@
       line-height: 1;
     }
     .nav-link:hover { background: #ffffff11; border-color: #ffffffaa; }
-    .nav-link.active{ background: #ffffff18; border-color: #ffffffcc; }
+    .nav-link.active{ background: #ffffff18; border-color: #ffffffcc; font-weight: 600; }
 
     .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap; }
 
@@ -105,6 +111,7 @@
         url("parebrise.png") center/cover no-repeat;
       color: white;
     }
+
     .hero-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; }
 
     .hero-offer {
@@ -180,6 +187,7 @@
     .section-subtitle { text-align: center; color: #6b7280; margin-bottom: 20px; }
 
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+
     .card {
       background: white;
       border-radius: 16px;
@@ -188,9 +196,11 @@
       box-shadow: 0 8px 22px rgba(0,0,0,0.05);
       font-size: 0.9rem;
     }
+
     .card h3 { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
 
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
     .step { border: 1px dashed #ddd; padding: 14px; border-radius: 12px; background: #f9fafb; font-size: 0.9rem; }
 
     /* ZONE & CONTACT */
@@ -198,8 +208,40 @@
 
     .contact-box { padding: 16px; background: #f9fafb; border-radius: 14px; border: 1px solid #e5e7eb; font-size: 0.9rem; }
 
-    /* FORM */
+    /* ✅ HORAIRES (BADGES) */
+    .badges {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.8rem;
+      font-weight:600;
+      border:1px solid #e5e7eb;
+      background:#fff;
+      color:#111827;
+      white-space:nowrap;
+    }
+    .badge.green {
+      border-color: rgba(34, 197, 94, 0.35);
+      background: rgba(34, 197, 94, 0.10);
+      color: #166534;
+    }
+    .badge.dark {
+      border-color: rgba(17, 24, 39, 0.25);
+      background: rgba(17, 24, 39, 0.06);
+      color: #111827;
+    }
+
+    /* FORMULAIRE */
     form { display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; }
+
     label { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; display: block; }
 
     input, textarea, select {
@@ -212,7 +254,11 @@
       outline: none;
       transition: 0.2s;
     }
-    input:focus, textarea:focus, select:focus { border-color: #ef4444; box-shadow: 0 0 0 2px rgba(239,68,68,0.25); }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 2px rgba(239,68,68,0.25);
+    }
 
     textarea { min-height: 90px; resize: vertical; }
 
@@ -232,38 +278,65 @@
     .form-message.success { display: block; color: #16a34a; }
     .form-message.error { display: block; color: #dc2626; }
 
-    /* ✅ Bloc pièces jointes (même style que contact-box) */
-    .pj-note{
+    /* ✅ PJ (comme avant : encadré “onglet”, ouvert direct) */
+    .pj-tab{
       margin-top:14px;
-      padding:14px;
       border-radius:14px;
-      border:1px solid #e5e7eb;
-      background:#ffffff;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
-      font-size:0.9rem;
+      border:1px solid rgba(239,68,68,0.25);
+      overflow:hidden;
+      background:#fff;
     }
-    .pj-note h4{
-      font-size:1rem;
-      margin-bottom:6px;
+    .pj-tab-head{
       display:flex;
       align-items:center;
-      gap:8px;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      background:rgba(239,68,68,0.08);
+      user-select:none;
+    }
+    .pj-tab-head strong{ color:#b91c1c; font-size:0.92rem; }
+    .pj-tab-head span{ font-size:0.9rem; opacity:0.75; }
+
+    .pj-tab-body{
+      padding:14px;
+      display:block; /* ✅ ouvert direct */
+      font-size:0.9rem;
       color:#111827;
     }
-    .pj-note p{ color:#374151; margin-bottom:10px; }
-    .pj-note ul{ margin: 0 0 10px 18px; color:#111827; }
-    .pj-badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-    .pj-badge{
+    .pj-tab-body p{ margin-bottom:10px; color:#374151; }
+    .pj-list{ margin:8px 0 12px 18px; color:#111827; }
+
+    .pj-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    .btn-mini{
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:0.8rem;
+      font-weight:600;
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#f3f4f6;
-      border:1px solid #e5e7eb;
-      font-size:0.8rem;
-      color:#111827;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.2s;
       white-space:nowrap;
+    }
+    .btn-mini.red{ background:#ef4444; color:white; }
+    .btn-mini.red:hover{ background:#dc2626; transform:translateY(-1px); }
+    .btn-mini.outline{
+      background:transparent;
+      color:#ef4444;
+      border-color:rgba(239,68,68,0.45);
+    }
+    .btn-mini.outline:hover{
+      background:rgba(239,68,68,0.08);
+      border-color:rgba(239,68,68,0.7);
+      transform:translateY(-1px);
     }
 
     /* FOOTER */
@@ -275,11 +348,13 @@
     .fade-in-right { transform: translateX(24px); }
     .visible { opacity: 1; transform: translate(0,0); }
 
+    /* TABLETTE */
     @media (max-width: 768px) {
       .hero-grid { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
     }
 
+    /* MOBILE HEADER */
     @media (max-width: 480px) {
       header { padding: 8px 0; }
       .nav { flex-wrap: wrap; gap: 8px; }
@@ -289,12 +364,15 @@
       .logo { white-space: normal; overflow: visible; text-overflow: unset; max-width: 100%; line-height: 1.1; text-align: left; }
 
       .nav-center{ width: 100%; justify-content: center; }
+
       .nav-right { width: 100%; justify-content: center; gap: 10px; }
 
       .btn-primary, .btn-phone { padding: 6px 10px; font-size: 0.75rem; }
 
       .hero { padding-top: 60px; }
       .hero h1 { font-size: 1.6rem; }
+
+      .pj-tab-head span{ display:none; }
     }
   </style>
 </head>
@@ -351,11 +429,16 @@
 
         <p class="hero-highlight">
           Pose soignée • Matériel professionnel • Immobilisation minimale du véhicule
-          <br>
-          <strong style="color:#bbf7d0;">🟢 Disponible 7j/7 — 8h00 à 20h00</strong>
         </p>
 
-        <div class="hero-actions">
+        <!-- ✅ Horaires en badges (plus clean) -->
+        <div class="badges">
+          <span class="badge green">🟢 7j/7</span>
+          <span class="badge dark">🕘 8h00–20h00</span>
+          <span class="badge dark">⚡ Intervention rapide</span>
+        </div>
+
+        <div class="hero-actions" style="margin-top:14px;">
           <a href="#contact" class="btn-primary">📅 Prendre un rendez-vous</a>
           <a href="tel:0757823868" class="btn-outline">📞 Appeler maintenant</a>
         </div>
@@ -455,10 +538,12 @@
         <p>📞 07 57 82 38 68</p>
         <p>Email : <a href="mailto:rapidautoplus@gmail.com">rapidautoplus@gmail.com</a></p>
 
-        <hr style="margin:12px 0; border:none; border-top:1px solid #e5e7eb;">
-        <p><strong>Horaires :</strong></p>
-        <p style="color:#16a34a; font-weight:700;">✅ Lundi – Dimanche : 8h00 – 20h00</p>
-        <p style="font-size:0.85rem; opacity:0.8;">Intervention selon disponibilité</p>
+        <div class="badges">
+          <span class="badge green">🟢 7j/7</span>
+          <span class="badge dark">🕘 8h00–20h00</span>
+        </div>
+
+        <p style="font-size:0.85rem; opacity:0.8; margin-top:8px;">Intervention selon disponibilité</p>
       </div>
 
     </div>
@@ -472,9 +557,10 @@
         <h2 class="section-title" style="text-align:left;">Demande de rendez-vous</h2>
         <p>Remplissez le formulaire pour une prise en charge rapide.</p>
 
-        <p style="margin-top:10px; font-size:0.9rem; opacity:0.9;">
-          <strong style="color:#16a34a;">✅ Disponible 7j/7 — 8h00 à 20h00</strong>
-        </p>
+        <div class="badges" style="margin-top:10px;">
+          <span class="badge green">🟢 7j/7</span>
+          <span class="badge dark">🕘 8h00–20h00</span>
+        </div>
       </div>
 
       <div class="contact-box fade-in-right">
@@ -539,27 +625,33 @@
           <div id="form-message" class="form-message"></div>
         </form>
 
-        <!-- ✅ Bloc PJ (même style que le site) -->
-        <div class="pj-note">
-          <h4>📎 Envoi des documents (après la demande)</h4>
-          <p>
-            Pour accélérer le devis, merci d’envoyer <strong>après avoir rempli le formulaire</strong> :
-          </p>
-          <ul>
-            <li>Photo de l’impact</li>
-            <li>Carte grise</li>
-            <li>Attestation d’assurance</li>
-          </ul>
-
-          <div class="pj-badges">
-            <span class="pj-badge">📞 WhatsApp / SMS : 07 57 82 38 68</span>
-            <span class="pj-badge">✉️ Email : rapidautoplus@gmail.com</span>
-            <span class="pj-badge">🕘 7j/7 • 8h–20h</span>
+        <!-- ✅ PJ encadré comme avant -->
+        <div class="pj-tab">
+          <div class="pj-tab-head">
+            <strong>📎 Envoyer les photos / documents</strong>
+            <span>WhatsApp / SMS / Email</span>
           </div>
 
-          <p style="margin-top:10px; font-size:0.85rem; color:#6b7280;">
-            Astuce : indiquez votre <strong>immatriculation</strong> dans le message pour qu’on retrouve votre demande.
-          </p>
+          <div class="pj-tab-body">
+            <p>Pour établir le devis plus rapidement, merci d’envoyer <strong>après votre demande</strong> :</p>
+
+            <ul class="pj-list">
+              <li>Photo de l’impact</li>
+              <li>Carte grise</li>
+              <li>Attestation d’assurance</li>
+            </ul>
+
+            <p>Vous pouvez les transmettre par téléphone (WhatsApp / SMS) ou par email.</p>
+
+            <div class="pj-actions">
+              <a class="btn-mini red" href="tel:0757823868">📞 Envoyer par téléphone</a>
+              <a class="btn-mini outline" href="mailto:rapidautoplus@gmail.com?subject=Pi%C3%A8ces%20jointes%20-%20Rapid%20Auto%20Plus&body=Bonjour%2C%0A%0AVoici%20les%20documents%20pour%20mon%20devis%20%3A%20assurance%20%2F%20carte%20grise%20%2F%20photo%20impact.%0A%0AMon%20immatriculation%20%3A%20%0A%0AMerci.">✉️ Envoyer par email</a>
+            </div>
+
+            <p style="margin-top:10px; font-size:0.85rem; color:#6b7280;">
+              Astuce : indiquez votre <strong>immatriculation</strong> dans le message pour qu’on retrouve votre demande.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -589,7 +681,7 @@
       obs.observe(el);
     });
 
-    // Envoi AJAX du formulaire (FormSubmit)
+    // Envoi AJAX du formulaire
     const form = document.getElementById("contact-form");
     const messageBox = document.getElementById("form-message");
     const submitBtn = form.querySelector(".btn-submit");
@@ -612,7 +704,6 @@
         });
 
         if (res.ok) {
-          // Conversion (si tu utilises AW, garde ton event comme avant)
           if (typeof gtag === "function") {
             gtag('event', 'conversion', {
               'send_to': 'AW-17799257107/CqpwCMvjp9AbEJO4rKdC',
